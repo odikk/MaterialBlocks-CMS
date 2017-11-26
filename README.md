@@ -63,6 +63,9 @@ Before:
 
 * [PHP](http://www.php.net)
 * [Frola Design Blocks](https://github.com/froala/design-blocks)
+* [Bootstrap](https://getbootstrap.com/)
+* [jQuery](https://jquery.com/)
+* [Popper.js](https://popper.js.org/)
 
 ## Contributing
 
