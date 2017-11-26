@@ -10,6 +10,7 @@ BeardBlock - Theming Guide
 ### 4. Block-Design
 ### 5. Conclusion
 
+
 ## 1. Introduction
 
 BeardBlock is a Block based CMS which is able to build dynamic websites containing Blocks.
@@ -32,6 +33,7 @@ files:
              +-- team.php
              \-- testimonial.php
 ```
+To apply or change the current Theme go to Dashboard > Settings > Design > Theme (Enter theme's name)
 
 ### 1.1 Pages, Blocks and Functions
 
@@ -289,3 +291,21 @@ If you are a more advanced user you can even build your own css file completly u
 
 ## 3. Font-Face
 
+The following simple steps are explaining how to change the Main-Font of your Theme.
+This only applies to default.css based themes!
+
+### Main-Font
+
+Before you are able to change used Font in your theme you need to change the Font-URL.
+To do this go to Dashboard > Settings > Design > FontURL and enter the URL of your font.
+
+To change the main font of the Theme you have to change the following line in the root header of your css:
+```css
+--font: 'FontName'
+```
+The used font has to be the same as the FontURL else sans-serif will be used.
+
+After changing this line the font is applied.
+
+
+### Font-Sizes
