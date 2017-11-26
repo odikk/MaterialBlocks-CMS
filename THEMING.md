@@ -3,14 +3,14 @@ BeardBlock - Theming Guide
 
 ## Contents:
 
-#### 1. Introduction
-##### 1.1 Pages, Blocks and Functions
-#### 2. Color Schema
-#### 3. Font-Face
-#### 4. Block-Design
-#### 5. Conclusion
-
 ### 1. Introduction
+#### 1.1 Pages, Blocks and Functions
+### 2. Color Schema
+### 3. Font-Face
+### 4. Block-Design
+### 5. Conclusion
+
+## 1. Introduction
 
 BeardBlock is a Block based CMS which is able to build dynamic websites containing Blocks.
 To achieve such a system BeardBlock needs a compatible Theme which contains the following
@@ -33,10 +33,10 @@ files:
              \-- testimonial.php
 ```
 
-#### 1.1 Pages, Blocks and Functions
+### 1.1 Pages, Blocks and Functions
 
-#### Pages
-##### 404-Page
+### Pages
+#### 404-Page
 
 Usage:
 ```php
@@ -47,7 +47,7 @@ BBError();
 Automatically shows up if the entered page(?site=id&page=id) is not available.
 
 
-##### Blog-Page
+#### Blog-Page
 
 Usage:
 ```php
@@ -58,7 +58,7 @@ BBBlog();
 Shows up if URL is like ?site=id&page=blog and represents the Blog.
 
 
-##### Login-Page
+#### Login-Page
 
 Usage:
 ```php
@@ -75,7 +75,7 @@ POST must contain:
 * $_POST["password"]
 
 
-##### Register-Page
+#### Register-Page
 
 Usage:
 ```php
@@ -94,7 +94,7 @@ POST must contain:
 * $_POST["confirm_password"]
 
 
-##### Contact-Page
+#### Contact-Page
 
 Usage:
 ```php
@@ -108,7 +108,7 @@ Shows up if URL is like ?site=id&page=contact. Action is based on the Theme.
 The Theme must handle the contact form itself due to, to many possibilities.
 
 
-#### Blocks
+### Blocks
 
 Each Blocktype consists of various Slots. These slots can be empty(return false;).
 If a Slot isn't empty, then you have to return an array like this:
@@ -128,15 +128,136 @@ function BlockSlot1($imgs,$texts,$headings,$links,$bShow=true) {
         //Html source
     <?php
     }
+    $params=[0=>img count,1=>text count,2=>headings count,3=>link count];
+    return $params;
 }
 ?>
 ```
 
-##### CallToAction
+#### CallToAction
 
 Availiable Block Slots: 1-24
 
-Block Base Name: CallToActionSlot
+Block Base Name: CallToAction
 
 ##### Explanation:
 Big Jumbotron like Blocks.
+
+
+#### Content
+
+Availiable Block Slots: 1-33
+
+Block Base Name: Content
+
+##### Explanation:
+Blocks which mainly contain text and/or sometimes images.
+
+
+#### Feature
+
+Availiable Block Slots: 1-32
+
+Block Base Name: Feature
+
+##### Explanation:
+Blocks which explain certain Features or Functions.
+
+
+#### Pricing
+
+Availiable Block Slots: 1-10
+
+Block Base Name: Pricing
+
+##### Explanation:
+Blocks which represent the difference between certain prizes or shows products.
+
+
+#### Team
+
+Availiable Block Slots: 1-8
+
+Block Base Name: Team
+
+##### Explanation:
+Blocks which show Team Members and e.g. their role.
+
+
+#### Testimonial
+
+Availiable Block Slots: 1-10
+
+Block Base Name: Testimonial
+
+##### Explanation:
+Blocks which show user expierence or company expierence.
+
+
+### Functions
+
+#### Header
+
+The header function must be placed in the header.php and has to be defined like this:
+```php
+function BBHeader($iID,$bShow=true) {...}
+```
+Also the header function is always called at first.
+
+To implement Menu-Item Support you need to add the following code:
+```php
+$counter=0;
+while($aElem=HTMLGetMenuElement($iID,$counter)) {
+    //based on the css you use
+    echo "<li class=\"nav-item\">";
+    echo "<a class=\"nav-link\" href=\"".$aElem[1]."\">".$aElem[0]."</a>";
+    echo "</li>";
+    $counter++;
+}
+```
+
+To implement Support-Item Support you need to add the following code:
+```php
+$counter=0;
+while($aElem=HTMLGetSocialElement($iID,$counter)) {
+    //based on the css you use
+    echo "<li class=\"nav-item\">";
+    echo "<a class=\"nav-link\" href=\"".$aElem[1]."\">".$aElem[0]."</a>";
+    echo "</li>";
+    $counter++;
+}
+```
+
+
+#### Footer
+
+The footer function must be placed in the footer.php and has to be defined like this:
+```php
+function BBFooter($iID,$bShow=true) {...}
+```
+Also the footer function is always called at last.
+
+To implement Menu-Item Support you need to add the following code:
+```php
+$counter=0;
+while($aElem=HTMLGetMenuElement($iID,$counter)) {
+    //based on the css you use
+    echo "<li class=\"nav-item\">";
+    echo "<a class=\"nav-link\" href=\"".$aElem[1]."\">".$aElem[0]."</a>";
+    echo "</li>";
+    $counter++;
+}
+```
+
+To implement Support-Item Support you need to add the following code:
+```php
+$counter=0;
+while($aElem=HTMLGetSocialElement($iID,$counter)) {
+    //based on the css you use
+    echo "<li class=\"nav-item\">";
+    echo "<a class=\"nav-link\" href=\"".$aElem[1]."\">".$aElem[0]."</a>";
+    echo "</li>";
+    $counter++;
+}
+```
+
