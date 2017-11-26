@@ -39,34 +39,34 @@ files:
 
 Usage:
 ```php
-<?php BBError(); ?>
+BBError();
 ```
 
-Explanation:
+##### Explanation:
 Automatically shows up if the entered page(?site=id&page=id) is not available.
 
 ##### Blog-Page
 
 Usage:
 ```php
-<?php BBBlog(); ?>
+BBBlog();
 ```
 
-Explanation:
+##### Explanation:
 Shows up if url is like ?site=id&page=blog and represents the Blog.
 
 ##### Login-Page
 
 Usage:
 ```php
-<?php BBLogin(); ?>
+BBLogin();
 ```
 
-Explanation:
+##### Explanation:
 Shows up if url is like ?site=id&page=login and logs the user in.
 
-Important:
+##### Important:
 Submit url must look like: ?site=id&page=login&submit=true
-POST must contain:
-    $_POST["email"]
-    $_POST["password"]
+POST must contain: 
+* $_POST["email"]
+* $_POST["password"]
