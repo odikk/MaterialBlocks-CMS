@@ -261,3 +261,31 @@ while($aElem=HTMLGetSocialElement($iID,$counter)) {
 }
 ```
 
+
+## 2. Color Schema
+
+The most easy way to create a impressive Theme is to simply take the default.css from default's theme-folder
+and change the following values in the root header:
+```css
+--control-color: #rgb;
+--btn-hover-color: #rgb;
+--btn-black-hover-color: #rgb;
+--btn-white-hover-color: #rgb;
+--font-color: #rgb;
+--font-light-color: #rgb;
+--white: #rgb;
+--black: #rgb;
+--heart-color: #rgb;
+--dark-color: #rgb;
+--grey-color: #rgb;
+--link-color: #rgb;
+--link-dark-color: #rgb;
+--header-border: #rgb;
+--bg-color: #rgb;
+```
+
+If you are a more advanced user you can even build your own css file completly unrelated to bootstrap.
+
+
+## 3. Font-Face
+
