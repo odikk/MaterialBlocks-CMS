@@ -52,10 +52,9 @@ define("BB_DB_PW","1234"); //Enter database password here
 ![page](https://i.imgur.com/XyOuNe7.gif)
 
 ### 2. Change the used Theme
-Before:
-![before](https://i.imgur.com/aQrGDx9.gif)
 
-1. Install a new Theme or create your own(->see Theming.md)
+1. Install a new Theme or create your own(->see [THEMING](THEMING.md))
+
 2. Change the used Theme
 ![change](https://i.imgur.com/Sb5Ipnu.gif)
 
@@ -83,7 +82,7 @@ See also the list of [contributors](https://github.com/EasyDevCpp/BeardBlock/con
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
