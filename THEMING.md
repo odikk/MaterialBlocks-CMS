@@ -34,6 +34,7 @@ files:
 ```
 
 #### 1.1 Pages, Blocks and Functions
+
 #### Pages
 ##### 404-Page
 
@@ -45,6 +46,7 @@ BBError();
 ##### Explanation:
 Automatically shows up if the entered page(?site=id&page=id) is not available.
 
+
 ##### Blog-Page
 
 Usage:
@@ -53,7 +55,8 @@ BBBlog();
 ```
 
 ##### Explanation:
-Shows up if url is like ?site=id&page=blog and represents the Blog.
+Shows up if URL is like ?site=id&page=blog and represents the Blog.
+
 
 ##### Login-Page
 
@@ -63,10 +66,77 @@ BBLogin();
 ```
 
 ##### Explanation:
-Shows up if url is like ?site=id&page=login and logs the user in.
+Shows up if URL is like ?site=id&page=login and logs the user in.
 
 ##### Important:
-Submit url must look like: ?site=id&page=login&submit=true
+Submit URL must look like: ?site=id&page=login&submit=true
 POST must contain: 
 * $_POST["email"]
 * $_POST["password"]
+
+
+##### Register-Page
+
+Usage:
+```php
+BBRegister();
+```
+
+##### Explanation:
+Shows up if URL is like ?site=id&page=register and registers a new user.
+
+##### Important:
+Submit URL must look like: ?site=id&page=register&submit=true
+POST must contain:
+* $_POST["username"]
+* $_POST["email"]
+* $_POST["password"]
+* $_POST["confirm_password"]
+
+
+##### Contact-Page
+
+Usage:
+```php
+BBContact();
+```
+
+##### Explanation:
+Shows up if URL is like ?site=id&page=contact. Action is based on the Theme.
+
+##### Important:
+The Theme must handle the contact form itself due to, to many possibilities.
+
+
+#### Blocks
+
+Each Blocktype consists of various Slots. These slots can be empty(return false;).
+If a Slot isn't empty, then you have to return an array like this:
+```php
+$params[0=>img count,1=>text count,2=>heading count,3=>link count];
+return $params;
+```
+Also *every* Slot function needs 5 Parameters and needs to handle them like this:
+```php
+function BlockSlot1($imgs,$texts,$headings,$links,$bShow=true) {
+    $imgs=explode("|",$imgs);
+    $texts=explode("|",$texts);
+    $headings=explode("|",$headings);
+    $links=explode("|",$links);
+    if($bShow) {
+    ?>
+        //Html source
+    <?php
+    }
+}
+?>
+```
+
+##### CallToAction
+
+Availiable Block Slots: 1-24
+
+Block Base Name: CallToActionSlot
+
+##### Explanation:
+Big Jumbotron like Blocks.
