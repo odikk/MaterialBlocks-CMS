@@ -43,9 +43,11 @@ define("BB_DB_PW","1234"); //Enter database password here
 
 ## How to Use
 
+A more detailed Guide available at [GUIDE.md](GUIDE.md)!
+
 ### 1. Add a Page & Edit it!
 
-1. Login
+1. Login at ?site=dashboard
 ![login](https://i.imgur.com/m6SNlRm.gif)
 
 2. Add a Page & Edit it!
