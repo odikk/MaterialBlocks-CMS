@@ -35,6 +35,9 @@ files:
 ```
 To apply or change the current Theme go to Dashboard > Settings > Design > Theme (Enter theme's name)
 
+To preview the chosen Theme simply enter ThemePreviewer.php after your Installation-URL. A extended Theme-
+Preview should popup!
+
 ### 1.1 Pages, Blocks and Functions
 
 ### Pages
