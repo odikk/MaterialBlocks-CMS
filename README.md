@@ -1,7 +1,7 @@
 BeardBlock
 =================
 
-Froala design-blocks based CMS (PHP7 and up). [Support](mailto: easy-dev@web.de)
+Froala design-blocks based CMS (PHP5 and up). [Support](mailto: easy-dev@web.de)
 
 ![demo](https://i.imgur.com/m6SNlRm.gif)
 
@@ -16,7 +16,7 @@ These instructions will get you a copy of the project up and running on your ser
 Before you could start you need to install the following items on your webserver:
 
 ```
-* php>=7.0
+* php>=5.*
 * MySQL
 ```
 
@@ -90,4 +90,4 @@ This project is licensed under the GNU General Public License - see the [LICENSE
 * Inspired by WordPress
 
 ## Updates
-* 1.0.0 first release with php7
+* 1.0.0 first release
