@@ -169,7 +169,7 @@
                 <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-left">
                     <h1>Finished!</h1>
                     <p class="text-h3">BeardBlock is now ready to use!</p>
-                    <h3><strong>Important: Delete this file from your server!</strong></h3>
+                    <h3><strong>Important: Delete this file from your server! (install.php located in BeardBlok root)</strong></h3>
                     <p class="mt-4">
                         <a class="btn btn-round btn-black btn-empty" href="index.php">View Page <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                     </p>
