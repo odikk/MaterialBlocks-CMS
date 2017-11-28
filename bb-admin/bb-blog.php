@@ -22,6 +22,8 @@
             if($_GET["submit"]=="post") {
                 if(isset($_POST["title"])&&isset($_POST["img"])&&isset($_POST["message"])) {
                     SQLAddPostRow($_POST["title"],$_POST["message"],$_POST["img"],UserGetIDFromSession());
+                    $post_id=SQLGetPostIDsUnordered()[SQLGetPostRowCount()-1];
+                    echo "<meta http-equiv=\"refresh\" content=\"0; URL=?site=dashboard&siteid=".$iID."&action=edit_post&post=".$post_id."\">";
                 }
             }
         }

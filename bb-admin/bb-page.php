@@ -21,15 +21,15 @@
 		if(isset($_GET["submit"])) {
 			if($_GET["submit"]=="data") {
 				if(isset($_POST["title"])&&$_POST["title"]!="Home") {
-					SQLAddPageRow($iID,$_POST["title"],"");
+                    SQLAddPageRow($iID,$_POST["title"],"");
+                    $page_id=SQLGetPageIDs()[SQLGetPageRowCount()-1];
 					if(isset($_POST["add"])&&$_POST["add"]=="true") {
-						$page_id=SQLGetPageIDs()[SQLGetPageRowCount()-1];
 						$row=SQLGetMenuRow($iID);
 						$name_changes=$row["link_names"]."|".$_POST["title"];
 						$href_changes=$row["link_hrefs"]."|?site=".$iID."&page=".$page_id;
 						SQLSetMenuRow($iID,$name_changes,$href_changes);
                     }
-					echo "<meta http-equiv=\"refresh\" content=\"0; URL=?site=dashboard&siteid=".$iID."&action=view_pages\">";
+					echo "<meta http-equiv=\"refresh\" content=\"0; URL=?site=dashboard&siteid=".$iID."&action=edit_page&page=".$page_id."\">";
 				}
 			}
 		}
