@@ -44,3 +44,45 @@ The dashboard contains 9 different options, each of this option fullfills a diff
 
 ## Add Page
 Used to add a new Page to your Site. You are able to directly add this Page to your SiteMenu by checking the box. After you clicked on Add Page you will be directly redirected to the Page Editor.
+
+## View Pages
+Shows you all avialable Pages you have added lately to your site. Also you can delete each page or edit it directly from here. Simply
+click on the minus button or the pencil button.
+
+## Add Custom(Recommended for advanced users only)
+Each Theme **must** contain a custom.php which is used to load custom pages. To add such a Page simply click on Add Custom and give the page a title. Also you need to enter a string which will be very important. Normally you like to choose the same as in the title. After that the pages is added but if we call it, we won't see anything! This is because we have to change the custom.php like this:
+```php
+/*
+    Let's say our Custom String is Trap
+*/
+function BBCustom($CustomParam) {
+    if($CustomParam=="Trap") {
+		echo "<section class=\"fdb-block\">";
+		echo "<div class=\"container\">";
+		echo "<div class=\"row align-items-center\">";
+		echo "<h1>It's a Trap!</h1>";
+		echo "</div>";
+		echo "</div>";
+		echo "</section>";
+    }
+}
+```
+If we reload the page now we will see the text It's a Trap! or something else. You can even call Function from this point but keep in mind that functions from different sources can be dangerous.
+
+## Add Post
+
+
+## View Posts
+
+
+## View Users
+
+
+## Edit Elememts
+
+
+## Settings
+
+
+## Log Out
+
