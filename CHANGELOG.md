@@ -5,9 +5,11 @@
 * [ ] GUIDE.md
 * [x] CHANGELOG.md
 * [x] Dashboard-Button after footer(Admin only)
+* [ ] View Post and View Page Button
 
 ## Changed:
-* [ ] Automatic redirect after Add Page -> Edit Page
+* [ ] Automaticly redirect after Add Page -> Edit Page
+* [ ] Automaticly redirect after Add Post -> Edit Post
 
 ====================================================================
 
