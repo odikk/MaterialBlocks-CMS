@@ -130,7 +130,7 @@
 				<div class="container">
 					<div class="row justify-content-start">
 						<div class="col-2">
-							<p class="text-h3"><a href="?site=dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></p>
+							<?php echo "<p class=\"text-h3\"><a href=\"?site=dashboard&siteid=".$iSite."\"><i class=\"fa fa-tachometer\" aria-hidden=\"true\"></i> Dashboard</a></p>"; ?>
 						</div>
 						<div class="col-2">
 							<?php echo "<p class=\"text-h3\"><a href=\"?site=dashboard&siteid=".$iSite."&action=add_post\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a></p>"; ?>
