@@ -44,3 +44,19 @@ The dashboard contains 9 different options, each of this option fullfills a diff
 
 ## Add Page
 Used to add a new Page to your Site. You are able to directly add this Page to your SiteMenu by checking the box. After you clicked on Add Page you will be directly redirected to the Page Editor.
+
+## View Pages
+
+## Add Custom
+
+## Add Post
+
+## View Posts
+
+## View Users
+
+## Edit Elememts
+
+## Settings
+
+## Log Out
