@@ -1,12 +1,12 @@
 # v1.1.0
 
-# Added:
+## Added:
 * [x] ThemePreviewer.php
 * [x] GUIDE.md
 * [x] CHANGELOG.md
 * [ ] Dashboard-Button after footer(Admin only)
 
-# Changed:
+## Changed:
 * [ ] Automatic redirect after Add Page -> Edit Page
 
 ====================================================================
