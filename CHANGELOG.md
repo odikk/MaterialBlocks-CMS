@@ -2,7 +2,7 @@
 
 ## Added:
 * [x] ThemePreviewer.php
-* [x] GUIDE.md
+* [ ] GUIDE.md
 * [x] CHANGELOG.md
 * [x] Dashboard-Button after footer(Admin only)
 
