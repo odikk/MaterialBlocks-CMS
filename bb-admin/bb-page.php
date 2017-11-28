@@ -463,6 +463,7 @@
                     <p class="text-h2">Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
+                            echo "<p class=\"text-h3\"><a target=\"_blank\" href=\"index.php?site=".$_GET["siteid"]."&page=".$iPageID."\" class=\"btn btn-black btn-empty btn-round\"><i class=\"fa fa-code\" aria-hidden=\"true\"></i> View Page</a></p>";
                             echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."&action=view_pages\" class=\"btn btn-round\"><i class=\"fa fa-arrow-left\" aria-hidden=\"true\"></i> View Pages</a></p>";
                         }
                     ?>
