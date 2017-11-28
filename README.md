@@ -67,6 +67,7 @@ A more detailed Guide available at [GUIDE.md](GUIDE.md)!
 * [Bootstrap](https://getbootstrap.com/)
 * [jQuery](https://jquery.com/)
 * [Popper.js](https://popper.js.org/)
+* [Font-Awesome](http://fontawesome.io/)
 
 ## Contributing
 
