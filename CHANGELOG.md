@@ -4,7 +4,7 @@
 * [x] ThemePreviewer.php
 * [x] GUIDE.md
 * [x] CHANGELOG.md
-* [ ] Dashboard-Button after footer(Admin only)
+* [x] Dashboard-Button after footer(Admin only)
 
 ## Changed:
 * [ ] Automatic redirect after Add Page -> Edit Page
