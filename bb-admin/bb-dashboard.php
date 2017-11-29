@@ -38,6 +38,7 @@
 	}
 
 	function DashboardMain($iID) {
+		$row=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
 	?>
 	<section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
     	<div class="container justify-content-center align-items-center d-flex">
@@ -51,6 +52,9 @@
       		</div>
     	</div>
   	</section>
+	<?php
+		if($row["type"]==2) {
+	?>
 	<section class="fdb-block" style="background-image: url(./fdb-imgs/bg_0.svg)">
     	<div class="container">
       		<div class="row text-center">
@@ -167,22 +171,110 @@
     	</div>
   	</section>
 	<?php
+		} else {
+	?>
+	<section class="fdb-block" style="background-image: url(./fdb-imgs/bg_0.svg)">
+    	<div class="container">
+      		<div class="row text-center">
+        		<div class="col-12 col-md-8 m-auto col-lg-4">
+          			<div class="fdb-box">
+            			<h2><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Page</h2>
+						<br/>
+						<?php
+						if(isset($_GET["siteid"])) {
+							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=add_page\" class=\"btn btn-empty btn-round\">Add Page</a></p>";
+						}
+						?>
+          			</div>
+        		</div>
+        		<div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
+          			<div class="fdb-box">
+					  	<h2><i class="fa fa-columns" aria-hidden="true"></i> View Pages</h2>
+						<br/>
+						<?php
+						if(isset($_GET["siteid"])) {
+							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=view_pages\" class=\"btn btn-empty btn-round\">View Pages</a></p>";
+						}
+						?>
+          			</div>
+        		</div>
+        		<div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
+          			<div class="fdb-box">
+					  	<h2><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Custom</h2>
+						<br/>
+						<?php
+						if(isset($_GET["siteid"])) {
+							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=add_custom_page\" class=\"btn btn-empty btn-round\">Add Custom</a></p>";
+						}
+						?>
+          			</div>
+        		</div>
+      		</div>
+    	</div>
+		<br/>
+		<div class="container">
+      		<div class="row text-center">
+        		<div class="col-12 col-md-8 m-auto col-lg-4">
+          			<div class="fdb-box">
+            			<h2><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Post</h2>
+						<br/>
+						<?php
+						if(isset($_GET["siteid"])) {
+							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=add_post\" class=\"btn btn-empty btn-round\">Add Post</a></p>";
+						}
+						?>
+          			</div>
+        		</div>
+        		<div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
+          			<div class="fdb-box">
+					  	<h2><i class="fa fa-columns" aria-hidden="true"></i> View Posts</h2>
+						<br/>
+						<?php
+						if(isset($_GET["siteid"])) {
+							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=view_posts\" class=\"btn btn-empty btn-round\">View Posts</a></p>";
+						}
+						?>
+          			</div>
+        		</div>
+        		<div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
+          			<div class="fdb-box">
+					  	<h2><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</h2>
+						<br/>
+						<?php 
+						if(isset($_GET["siteid"])) {
+							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=logout\" class=\"btn btn-empty btn-round\">Log Out</a></p>";
+						}
+						?>
+          			</div>
+        		</div>
+      		</div>
+    	</div>
+  	</section>
+	<?php
+		}
 	}
 
 	function DashboardShow() {
 		if(UserIsSessionValid(1)) {
+			$row=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
 			if(isset($_GET["siteid"])&&isset($_GET["action"])) {
 				if($_GET["action"]=="logout") {
 					SessionDestroyUser();
 					echo "<meta http-equiv=\"refresh\" content=\"0; URL=index.php?site=dashboard\">";
 				} else if($_GET["action"]=="view_users") {
-					UserViewer();
+					if($row["type"]==2) {
+						UserViewer();
+					}
 				} else if($_GET["action"]=="settings") {
-					SettingsShow($_GET["siteid"]);
+					if($row["type"]==2) {
+						SettingsShow($_GET["siteid"]);
+					}
 				} else if($_GET["action"]=="elements") {
-					include("themes/".SQLGetSiteRow($_GET["siteid"])["theme"]."/header.php");
-					include("themes/".SQLGetSiteRow($_GET["siteid"])["theme"]."/footer.php");
-					ElementsShow($_GET["siteid"]);
+					if($row["type"]==2) {
+						include("themes/".SQLGetSiteRow($_GET["siteid"])["theme"]."/header.php");
+						include("themes/".SQLGetSiteRow($_GET["siteid"])["theme"]."/footer.php");
+						ElementsShow($_GET["siteid"]);
+					}
 				} else if($_GET["action"]=="add_post") {
 					BlogAddPost($_GET["siteid"]);
 				} else if($_GET["action"]=="view_posts") {
@@ -193,7 +285,10 @@
 					}
 				} else if($_GET["action"]=="del_post") {
 					if(isset($_GET["post"])) {
-						BlogDeletePost($_GET["siteid"],$_GET["post"]);
+						if($row["type"]==2) {
+							BlogDeletePost($_GET["siteid"],$_GET["post"]);
+							echo "<meta http-equiv=\"refresh\" content=\"0; URL=index.php?site=dashboard&siteid=".$_GET["siteid"]."&action=view_posts\">";
+						}
 					}
 				} else if($_GET["action"]=="add_page") {
 					PageAddPage($_GET["siteid"]);
@@ -206,7 +301,10 @@
 					}
 				} else if($_GET["action"]=="del_page") {
 					if(isset($_GET["page"])) {
-						PageDeletePage($_GET["siteid"],$_GET["page"]);
+						if($row["type"]==2) {
+							PageDeletePage($_GET["siteid"],$_GET["page"]);
+							echo "<meta http-equiv=\"refresh\" content=\"0; URL=index.php?site=dashboard&siteid=".$_GET["siteid"]."&action=view_pages\">";
+						}
 					}
 				} else if($_GET["action"]=="add_custom_page") {
 					PageAddCustomPage($_GET["siteid"]);
@@ -219,11 +317,15 @@
 				DashboardMain($_GET["siteid"]);
 			} else {
 				if(isset($_GET["action"])&&$_GET["action"]=="add") {
-					SiteAdd();
+					if($row["type"]==2) {
+						SiteAdd();
+					}
 				} else if(!isset($_GET["action"])) {
 					if(isset($_GET["delete"])) {
-						SQLDeleteSite($_GET["delete"]);
-						echo "<meta http-equiv=\"refresh\" content=\"0; URL=index.php?site=dashboard\">";
+						if($row["type"]==2) {
+							SQLDeleteSite($_GET["delete"]);
+							echo "<meta http-equiv=\"refresh\" content=\"0; URL=index.php?site=dashboard\">";
+						}
 					}
 					SiteChoser();
 				}

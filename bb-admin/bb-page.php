@@ -21,15 +21,15 @@
 		if(isset($_GET["submit"])) {
 			if($_GET["submit"]=="data") {
 				if(isset($_POST["title"])&&$_POST["title"]!="Home") {
-					SQLAddPageRow($iID,$_POST["title"],"");
+                    SQLAddPageRow($iID,$_POST["title"],"");
+                    $page_id=SQLGetPageIDs()[SQLGetPageRowCount()-1];
 					if(isset($_POST["add"])&&$_POST["add"]=="true") {
-						$page_id=SQLGetPageIDs()[SQLGetPageRowCount()-1];
 						$row=SQLGetMenuRow($iID);
 						$name_changes=$row["link_names"]."|".$_POST["title"];
 						$href_changes=$row["link_hrefs"]."|?site=".$iID."&page=".$page_id;
 						SQLSetMenuRow($iID,$name_changes,$href_changes);
                     }
-					echo "<meta http-equiv=\"refresh\" content=\"0; URL=?site=dashboard&siteid=".$iID."&action=view_pages\">";
+					echo "<meta http-equiv=\"refresh\" content=\"0; URL=?site=dashboard&siteid=".$iID."&action=edit_page&page=".$page_id."\">";
 				}
 			}
 		}
@@ -161,6 +161,7 @@
     }
 
     function PageViewPages($iID) {
+        $user=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
     ?>
     <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
         <div class="container justify-content-center align-items-center d-flex">
@@ -214,7 +215,7 @@
                     } else {
                         echo "<a href=\"?site=dashboard&siteid=".$iID."&action=edit_custom_page&page=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 30px;\"><i class=\"fa fa-pencil\"></i></a>";
                     }
-                    if($row["title"]!="Home") {
+                    if($row["title"]!="Home"&&$user["type"]==2) {
                         echo "<a href=\"?site=dashboard&siteid=".$iID."&action=del_page&page=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 30px;\"><i class=\"fa fa-minus-circle\"></i></a>";
                     }
                     ?>
