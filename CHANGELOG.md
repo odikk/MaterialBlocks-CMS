@@ -1,15 +1,18 @@
 # v1.1.0
 
 ## Added:
-* [x] ThemePreviewer.php
-* [ ] GUIDE.md
-* [x] CHANGELOG.md
-* [x] Dashboard-Button after footer(Admin only)
-* [x] View Post and View Page Button
+* Editor role
+
+## Finished:
+* GUIDE.md
 
 ## Changed:
-* [ ] Automaticly redirect after Add Page -> Edit Page
-* [ ] Automaticly redirect after Add Post -> Edit Post
+* Automaticly redirect after Add Page -> Edit Page
+* Automaticly redirect after Add Post -> Edit Post
+* Footer Link-Design
+
+## Fixed:
+* Delete ends up on blank page
 
 ====================================================================
 
