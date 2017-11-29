@@ -387,6 +387,10 @@
 		return __sqlFetchIDsOrderBy("bb_post","date");
 	}
 
+	function SQLGetPostIDsUnordered() {
+		return __sqlFetchIDs("bb_post");
+	}
+
 	function SQLSetPostRow($iID,$sTitle,$sContent,$sImg) {
 		__sqlUpdate("bb_post",$iID,"title",$sTitle);
 		__sqlUpdate("bb_post",$iID,"content",$sContent);

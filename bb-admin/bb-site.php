@@ -18,14 +18,19 @@
     */
     
     function SiteChoser() {
+        $user=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
     ?>
     <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                      <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
-                      <p class="text-h2">Dashboard and Control Center.</p>
-                    <?php echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&action=add\" class=\"btn btn-round\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Site</a></p>"; ?>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
+                    <p class="text-h2">Dashboard and Control Center.</p>
+                    <?php 
+                    if($user["type"]==2) {
+                        echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&action=add\" class=\"btn btn-round\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Site</a></p>"; 
+                    }
+                    ?>
                 </div>
               </div>
         </div>
@@ -42,9 +47,13 @@
                               <div class="fdb-box">
                                 <div class="row justify-content-center">
                                       <div class="col-12 col-xl-8 text-center">
-                                        <?php echo "<h1>".$row["title"]."-".$row["description"]."</h1>"; ?>
-                                        <?php echo "<p class=\"text-h3 mt-4\"><a href=\"?site=dashboard&siteid=".$ids[$i-1]."\" class=\"btn btn-black btn-empty btn-round\">Open</a></p>"; ?>
-                                        <?php echo "<p class=\"text-h3 mt-4\"><a href=\"?site=dashboard&delete=".$ids[$i-1]."\" class=\"btn btn-empty btn-round\">Delete</a></p>"; ?>
+                                        <?php 
+                                        echo "<h1>".$row["title"]."-".$row["description"]."</h1>";
+                                        echo "<p class=\"text-h3 mt-4\"><a href=\"?site=dashboard&siteid=".$ids[$i-1]."\" class=\"btn btn-black btn-empty btn-round\">Open</a></p>";
+                                        if($user["type"]==2) {
+                                            echo "<p class=\"text-h3 mt-4\"><a href=\"?site=dashboard&delete=".$ids[$i-1]."\" class=\"btn btn-empty btn-round\">Delete</a></p>";
+                                        }
+                                        ?>
                                       </div>
                                 </div>
                             </div>

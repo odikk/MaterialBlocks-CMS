@@ -22,6 +22,8 @@
             if($_GET["submit"]=="post") {
                 if(isset($_POST["title"])&&isset($_POST["img"])&&isset($_POST["message"])) {
                     SQLAddPostRow($_POST["title"],$_POST["message"],$_POST["img"],UserGetIDFromSession());
+                    $post_id=SQLGetPostIDsUnordered()[SQLGetPostRowCount()-1];
+                    echo "<meta http-equiv=\"refresh\" content=\"0; URL=?site=dashboard&siteid=".$iID."&action=edit_post&post=".$post_id."\">";
                 }
             }
         }
@@ -79,6 +81,7 @@
     }
 
     function BlogViewPosts($iID) {
+        $user=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
     ?>
     <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
         <div class="container justify-content-center align-items-center d-flex">
@@ -129,7 +132,9 @@
                 echo "<h2>".$row["title"]."</h2>";
                 echo "<h3>".date("d.m.Y",strtotime($row["date"]))."</h3><br/>";
                 echo "<a href=\"?site=dashboard&siteid=".$iID."&action=edit_post&post=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 30px;\"><i class=\"fa fa-pencil\"></i></a>";
-                echo "<a href=\"?site=dashboard&siteid=".$iID."&action=del_post&post=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 30px;\"><i class=\"fa fa-minus-circle\"></i></a>";
+                if($user["type"]==2) {
+                    echo "<a href=\"?site=dashboard&siteid=".$iID."&action=del_post&post=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 30px;\"><i class=\"fa fa-minus-circle\"></i></a>";
+                }
                 ?>
                             </div>
                         </div>
