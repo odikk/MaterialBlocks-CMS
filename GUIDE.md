@@ -4,11 +4,8 @@
 1. [Installation](#installation)
 2. [Login](#login)
 3. [Dashboard](#dashboard)
-4. [Add Post](#add_post)
-5. [Add Page](#add_page)
-6. [Edit Page](#edit_page)
-7. [Edit Elements](#edit_elements)
-8. [Support](#support)
+4. [Static Sites](#static-sites)
+5. [Support](#support)
 
 # Installation
 The following short paragraph will get you a working installation of BeardBlock.
@@ -70,19 +67,43 @@ function BBCustom($CustomParam) {
 If we reload the page now we will see the text It's a Trap! or something else. You can even call Function from this point but keep in mind that functions from different sources can be dangerous.
 
 ## Add Post
-
+Adds a new post to the Blog which is always located at **?site=id&page=blog** (More Info at [Static Sites](#static-sites)).
+You can edit all of your post later under View Posts by clicking on edit.
 
 ## View Posts
-
+Shows a list of all your added Posts ordered by Date. From here you can also edit or delete each post.
+**WARNING: Deletion or Edit can't be undone after saving!**
 
 ## View Users
-
+Shows a list of all registered Users and their role. User-Role can be: Administrator, Editor or Normal User. Only administrator is able to fully access the dashboard while Editor is only able to Edit or View Posts and Pages(Not implemented yet). Users are not allowed to access the Dashboard. After registration, which is located under **?site=id&page=register**, Users are normally assigned to the Normal User role.
 
 ## Edit Elememts
-
+The first two paragraphs are dynamicly created and are used to edit the Header & Footer block. Underneath this area you can edit your menu entries or your social media entries. The effect of those values are depending on your Theme.
 
 ## Settings
-
+The settings area is used to change the active Theme or the used Font-URL(See [THEMING.md](THEMING.md)). Also you are able to change the Site's Title, the Site's Description, the Site's Keywords or activate the Offline Ressources, which will help you to create a faster loading page but can also lead to certain incompatibility.
 
 ## Log Out
+Destroys your user session and redirects you to the login.
 
+
+# Static Sites
+
+You want to create your own Theme? Than read the [THEMING.md](THEMING.md)
+
+| Static Sites               | Description       |
+| -------------------------- | ----------------: |
+| **?site=id&page=blog**     | Blog page         |
+| **?site=id&page=contact**  | Contact page      |
+| **?site=id&page=login**    | Login page        |
+| **?site=id&page=register** | Registration page |
+| **?site=dashbaord**        | Dashboard         |
+
+
+# Support
+
+Any further problems/questions? Than contact me per mail or open an issue.
+
+Want to contribute? Than read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+## Enjoy!
