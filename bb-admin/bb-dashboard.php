@@ -194,6 +194,7 @@
 				} else if($_GET["action"]=="del_post") {
 					if(isset($_GET["post"])) {
 						BlogDeletePost($_GET["siteid"],$_GET["post"]);
+						echo "<meta http-equiv=\"refresh\" content=\"0; URL=index.php?site=dashboard&siteid=".$_GET["siteid"]."&action=view_posts\">";
 					}
 				} else if($_GET["action"]=="add_page") {
 					PageAddPage($_GET["siteid"]);
@@ -207,6 +208,7 @@
 				} else if($_GET["action"]=="del_page") {
 					if(isset($_GET["page"])) {
 						PageDeletePage($_GET["siteid"],$_GET["page"]);
+						echo "<meta http-equiv=\"refresh\" content=\"0; URL=index.php?site=dashboard&siteid=".$_GET["siteid"]."&action=view_pages\">";
 					}
 				} else if($_GET["action"]=="add_custom_page") {
 					PageAddCustomPage($_GET["siteid"]);
