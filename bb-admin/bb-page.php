@@ -161,6 +161,7 @@
     }
 
     function PageViewPages($iID) {
+        $user=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
     ?>
     <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
         <div class="container justify-content-center align-items-center d-flex">
@@ -214,7 +215,7 @@
                     } else {
                         echo "<a href=\"?site=dashboard&siteid=".$iID."&action=edit_custom_page&page=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 30px;\"><i class=\"fa fa-pencil\"></i></a>";
                     }
-                    if($row["title"]!="Home") {
+                    if($row["title"]!="Home"&&$user["type"]==2) {
                         echo "<a href=\"?site=dashboard&siteid=".$iID."&action=del_page&page=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 30px;\"><i class=\"fa fa-minus-circle\"></i></a>";
                     }
                     ?>
