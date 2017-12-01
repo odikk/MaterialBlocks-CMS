@@ -125,6 +125,8 @@
 			}
 			BBFooter($iSite);
 			if(UserIsSessionValid(1)) {
+				$user=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
+				if($user["type"]==2) {
 			?>
 			<section class="fdb-block" style="padding:5px; background: #252525;">
 				<div class="container">
@@ -151,6 +153,31 @@
 				</div>
 			</section>
 			<?php
+				} else {
+			?>
+			<section class="fdb-block" style="padding:5px; background: #252525;">
+				<div class="container">
+					<div class="row justify-content-start">
+						<div class="col-3">
+							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."\"><i class=\"fa fa-tachometer\" aria-hidden=\"true\"></i> Dashboard</a></p>"; ?>
+						</div>
+						<div class="col-2">
+							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=add_post\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a></p>"; ?>
+						</div>
+						<div class="col-2">
+							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=add_page\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a></p>"; ?>
+						</div>
+						<div class="col-2">
+							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=view_pages\"><i class=\"fa fa-columns\" aria-hidden=\"true\"></i> View Pages</a></p>"; ?>
+						</div>
+						<div class="col-3">
+							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty\" href=\"?site=dashboard&siteid=".$iSite."&action=logout\"><i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i> Log Out</a></p>"; ?>
+						</div>
+					</div>
+				</div>
+			</section>
+			<?php
+				}
 			}
 		}
     ?>
