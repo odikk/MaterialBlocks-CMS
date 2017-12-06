@@ -17,7 +17,7 @@
 	    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	*/
 	define("BB_DB_LOCATION","localhost"); //Enter database location here
-	define("BB_DB_NAME","bblock"); //Enter database name here(or leave the same[recommended])
+	define("BB_DB_NAME","materialblocks"); //Enter database name here(or leave the same[recommended])
 	define("BB_DB_USER","root"); //Enter database user here
 	define("BB_DB_PW","1234"); //Enter database password here
 ?>

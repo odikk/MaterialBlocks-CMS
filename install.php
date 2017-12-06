@@ -31,7 +31,7 @@
     <link type="text/css" rel="stylesheet" href="./themes/default/default.css">
 </head>
 <body>
-    <section class="fdb-block bg-dark fdb-viewport" style="background-image: url(./fdb-imgs/bg_c_1.svg);">
+    <section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
         <div class="container align-items-center justify-content-center d-flex">
             <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-10 col-lg-8">
@@ -57,7 +57,7 @@
     <?php
         if(!isset($_GET["action"])||(isset($_GET["action"])&&$_GET["action"]=="step1")) {
     ?>
-    <section class="fdb-block" style="background-image: url(./fdb-imgs/bg_4.svg)">
+    <section class="fdb-block" style="background-color: #212121; color: #eee;">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-left">
@@ -86,7 +86,7 @@
                             </div>
                             <div class="row mt-4">
                                 <div class="col">
-                                    <button class="btn" type="submit">Next <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                                    <button class="btn btn-round btn-empty" type="submit">Next <i class="fa fa-angle-right" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -95,11 +95,11 @@
             </div>
         </div>    
     </section>
-    <section class="fdb-block fdb-image-bg" style="background: url(./fdb-imgs/alt_wide_3.svg)">
+    <section class="fdb-block fdb-image-bg" style="background-color: #181818; color: #EEE;">
         <div class="container">
             <div class="row text-center">
                 <div class="col-12">
-                    <h1><a href="?action=step2" class="btn btn-round btn-black btn-empty">I already filled out this Form <i class="fa fa-angle-right" aria-hidden="true"></i></a></h1>
+                    <h1><a href="?action=step2" class="btn btn-round btn-empty">I already filled out this Form <i class="fa fa-angle-right" aria-hidden="true"></i></a></h1>
                 </div>
             </div>
         </div>
