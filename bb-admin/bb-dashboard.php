@@ -169,12 +169,12 @@
           			</div>
         		</div>
         		<div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
-          			<div class="fdb-box">
+          			<div class="fdb-box" style="background-color: #F44336; color: #eee;">
 					  	<h2><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</h2>
 						<br/>
 						<?php 
 						if(isset($_GET["siteid"])) {
-							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=logout\" class=\"btn btn-empty btn-round\">Log Out</a></p>";
+							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=logout\" class=\"btn btn-empty btn-white btn-round\">Log Out</a></p>";
 						}
 						?>
           			</div>
@@ -185,8 +185,11 @@
 	<?php
 		} else {
 	?>
-	<section class="fdb-block" style="background-image: url(./fdb-imgs/bg_0.svg)">
+	<section class="fdb-block" style="background-color: #212121; color: #EEE;">
     	<div class="container">
+			<div class="row">
+				<h2>Pages:</h2>
+			</div>
       		<div class="row text-center">
         		<div class="col-12 col-md-8 m-auto col-lg-4">
           			<div class="fdb-box">
@@ -212,7 +215,7 @@
         		</div>
         		<div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
           			<div class="fdb-box">
-					  	<h2><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Custom</h2>
+					  	<h2><i class="fa fa-plus-circle" aria-hidden="true"></i> Add PHPPage</h2>
 						<br/>
 						<?php
 						if(isset($_GET["siteid"])) {
@@ -225,6 +228,9 @@
     	</div>
 		<br/>
 		<div class="container">
+			<div class="row">
+				<h2>Community:</h2>
+			</div>
       		<div class="row text-center">
         		<div class="col-12 col-md-8 m-auto col-lg-4">
           			<div class="fdb-box">
@@ -249,12 +255,12 @@
           			</div>
         		</div>
         		<div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
-          			<div class="fdb-box">
+          			<div class="fdb-box" style="background-color: #F44336; color: #eee;">
 					  	<h2><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</h2>
 						<br/>
 						<?php 
 						if(isset($_GET["siteid"])) {
-							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=logout\" class=\"btn btn-empty btn-round\">Log Out</a></p>";
+							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=logout\" class=\"btn btn-empty btn-white btn-round\">Log Out</a></p>";
 						}
 						?>
           			</div>
