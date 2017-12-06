@@ -19,7 +19,17 @@
 		
 		function LoginForm() {
 	?>
-	<section class="fdb-block" style="background-image: url(./fdb-imgs/bg_0.svg)">
+	<section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
+    	<div class="container justify-content-center align-items-center d-flex">
+      		<div class="row justify-content-center text-center">
+        		<div class="col-12 col-md-8">
+          			<h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
+          			<p class="text-h2">Log In to Access the Dashboard.</p>
+        		</div>
+      		</div>
+    	</div>
+  	</section>
+	<section class="fdb-block" style="background-color: #212121; color: #eee;">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-12 col-md-8 col-lg-7 col-xl-5 text-center">
@@ -42,7 +52,7 @@
 							</div>
 							<div class="row mt-4">
 								<div class="col">
-									<button class="btn btn-empty btn-round" type="submit">Log In</button>
+									<button class="btn btn-empty btn-round" type="submit">Log In <i class="fa fa-angle-right" aria-hidden="true"></i></button>
 								</div>
 							</div>
 						</form>
