@@ -20,50 +20,52 @@
     function SiteChoser() {
         $user=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
     ?>
-    <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
+    <section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
                     <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
-                    <p class="text-h2">Dashboard and Control Center.</p>
+                    <p class="text-h2">Multiple Site Dashboard and Control Center.</p>
                     <?php 
                     if($user["type"]==2) {
-                        echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&action=add\" class=\"btn btn-round\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Site</a></p>"; 
+                        echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&action=add\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Site</a></p>"; 
                     }
                     ?>
                 </div>
               </div>
         </div>
     </section>
+    <section class="fdb-block fdb-image-bg" style="background-color: #212121; color: #EEE;">
+        <div class="container">
     <?php
         $ids=SQLGetSiteIDs();
         for($i=1;$i<=SQLGetSiteRowCount();$i++) {
             $row=SQLGetSiteRow($ids[$i-1]);
         ?>
-            <section class="fdb-block fdb-image-bg" style="background-image: url(./fdb-imgs/bg_0.svg);">
-                <div class="container">
-                      <div class="row justify-content-center">
-                        <div class="col-12 col-md-10 col-lg-8 text-center">
-                              <div class="fdb-box">
-                                <div class="row justify-content-center">
-                                      <div class="col-12 col-xl-8 text-center">
-                                        <?php 
-                                        echo "<h1>".$row["title"]."-".$row["description"]."</h1>";
-                                        echo "<p class=\"text-h3 mt-4\"><a href=\"?site=dashboard&siteid=".$ids[$i-1]."\" class=\"btn btn-black btn-empty btn-round\">Open</a></p>";
-                                        if($user["type"]==2) {
-                                            echo "<p class=\"text-h3 mt-4\"><a href=\"?site=dashboard&delete=".$ids[$i-1]."\" class=\"btn btn-empty btn-round\">Delete</a></p>";
-                                        }
-                                        ?>
-                                      </div>
-                                </div>
-                            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8 text-center">
+                      <div class="fdb-box">
+                        <div class="row justify-content-center">
+                              <div class="col-12 col-xl-8 text-center">
+                                <?php 
+                                echo "<h1>".$row["title"]."-".$row["description"]."</h1>";
+                                echo "<p class=\"text-h3 mt-4\">";
+                                echo "<a href=\"?site=dashboard&siteid=".$ids[$i-1]."\" class=\"btn btn-black btn-empty btn-round\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> Edit</a>";
+                                if($user["type"]==2) {
+                                    echo "<a href=\"?site=dashboard&delete=".$ids[$i-1]."\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-minus-circle\" aria-hidden=\"true\"></i> Delete</a>";
+                                }
+                                echo "</p>";
+                                ?>
+                              </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
-              </section>
+            </div>
         <?php
         }
     ?>
+        </div>
+    </section>
     <?php	
     }
 
@@ -73,18 +75,18 @@
             echo "<meta http-equiv=\"refresh\" content=\"0; URL=?site=dashboard\">";
         }
     ?>
-    <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
+    <section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                      <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
-                      <p class="text-h2">Dashboard and Control Center.</p>
-                    <?php echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard\" class=\"btn btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Back</a></p>"; ?>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
+                    <p class="text-h2">Multiple Site Dashboard and Control Center.</p>
+                    <?php echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i> Back</a></p>"; ?>
                 </div>
               </div>
         </div>
     </section>
-    <section class="fdb-block" style="background-image: url(./fdb-imgs/bg_0.svg)">
+    <section class="fdb-block" style="background-color: #212121; color: #EEE;">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-left">
@@ -113,7 +115,7 @@
                             </div>
                             <div class="row mt-4">
                                 <div class="col">
-                                    <button class="btn" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</button>
+                                    <button class="btn btn-round btn-empty" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</button>
                                 </div>
                             </div>
                         </form>
