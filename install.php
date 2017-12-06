@@ -1,6 +1,6 @@
 <?php
     /*
-		BeardBlock - Froala design-blocks based CMS
+		MaterialBlocks - Froala design-blocks based CMS
 	    Copyright (C) 2017  Robin Krause
 	
 	    This program is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BeardBlock Installation</title>
+    <title>MaterialBlocks-Installation</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
@@ -35,7 +35,7 @@
         <div class="container align-items-center justify-content-center d-flex">
             <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-10 col-lg-8">
-                    <h1>BeardBlock Installation</h1>
+                    <h1>MaterialBlocks Installation</h1>
                     <h3><strong>Make sure you edited the bb-config.php!</strong></h3>
                 </div>
             </div>
@@ -168,7 +168,7 @@
             <div class="row">
                 <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-left">
                     <h1>Finished!</h1>
-                    <p class="text-h3">BeardBlock is now ready to use!</p>
+                    <p class="text-h3">MaterialBlocks is now ready to use!</p>
                     <h3><strong>Important: Delete this file from your server! (install.php located in BeardBlok root)</strong></h3>
                     <p class="mt-4">
                         <a class="btn btn-round btn-black btn-empty" href="index.php">View Page <i class="fa fa-angle-right" aria-hidden="true"></i></a>

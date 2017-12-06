@@ -1,4 +1,4 @@
-# Hitchhiker's guide to BeardBlock
+# Hitchhiker's guide to MaterialBlocks-CMS
 
 # Contents:
 1. [Installation](#installation)
@@ -8,9 +8,9 @@
 5. [Support](#support)
 
 # Installation
-The following short paragraph will get you a working installation of BeardBlock.
+The following short paragraph will get you a working installation of MaterialBlocks.
 
-1. Download the newest stable-release of BeardBlock([Download](https://github.com/EasyDevCpp/BeardBlock/releases))
+1. Download the newest stable-release of MaterialBlocks([Download](https://github.com/EasyDevCpp/MaterialBlocks-CMS/releases))
 2. Extract the archive on a local device.
 3. Open navigate into the bb-include folder and edit the bb-config.php file like this:
 ```php
@@ -19,7 +19,7 @@ define("BB_DB_NAME","bblock"); //Enter database name here(or leave the same[reco
 define("BB_DB_USER","root"); //Enter database user here
 define("BB_DB_PW","1234"); //Enter database password here
 ```
-4. Upload the complete BeardBlock-Folder onto your server or local machine.
+4. Upload the complete MaterialBlocks-Folder onto your server or local machine.
 5. Navigate to the installation-URL, the installation should popup.
 **If the installation doesn't popup simple type in install.php**
 6. Follow the instructon on the screen.
@@ -32,9 +32,9 @@ worked!
 If this page doesn't open or open correctly please then please open an Issue on Github.
 
 # Login
-To log yourself into the BeardBlock dashboard simply type in: **?site=dashboard**. Now you will be promted to login. Simply enter your data and hit [ENTER] to continue.
+To log yourself into the MaterialBlocks dashboard simply type in: **?site=dashboard**. Now you will be promted to login. Simply enter your data and hit [ENTER] to continue.
 
-After you are logged in you are promted to choose a site which is because one BeardBlock Installation could have various sites to for example use different themes or even enable multi-language support!
+After you are logged in you are promted to choose a site which is because one MaterialBlocks Installation could have various sites to for example use different themes or even enable multi-language support!
 
 # Dashboard
 The dashboard contains 9 different options, each of this option fullfills a different function. In the following I will explain each of them.

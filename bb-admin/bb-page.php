@@ -1,6 +1,6 @@
 <?php
     /*
-		BeardBlock - Froala design-blocks based CMS
+		MaterialBlocks - Froala design-blocks based CMS
 	    Copyright (C) 2017  Robin Krause
 	
 	    This program is free software: you can redistribute it and/or modify
@@ -38,7 +38,7 @@
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
                     <p class="text-h2">Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
@@ -107,7 +107,7 @@
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
                     <p class="text-h2">Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
@@ -167,7 +167,7 @@
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
                     <p class="text-h2">Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
@@ -460,7 +460,7 @@
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
                     <p class="text-h2">Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
@@ -583,7 +583,7 @@
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
                     <p class="text-h2">Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {

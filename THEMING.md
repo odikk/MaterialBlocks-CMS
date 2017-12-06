@@ -1,4 +1,4 @@
-BeardBlock - Theming Guide
+MaterialBlocks - Theming Guide
 =================
 
 ## Contents:
@@ -13,8 +13,8 @@ BeardBlock - Theming Guide
 
 ## 1. Introduction
 
-BeardBlock is a Block based CMS which is able to build dynamic websites containing Blocks.
-To achieve such a system BeardBlock needs a compatible Theme which contains the following
+MaterialBlocks is a Block based CMS which is able to build dynamic websites containing Blocks.
+To achieve such a system MaterialBlocks needs a compatible Theme which contains the following
 files:
 ```
 ./themes/ThemeFolder/
@@ -412,7 +412,7 @@ function Team8($imgs,$texts,$headings,$links,$bShow=true) {
 ```
 
 Now we got 8 different Team Blocks but they are all empty and if
-we would load our theme into BeardBlock it wouldn't even show us
+we would load our theme into MaterialBlocks it wouldn't even show us
 one of our Blocks!
 
 But how can we change this?
@@ -469,14 +469,14 @@ function Team1($imgs,$texts,$headings,$links,$bShow=true) {
 }
 ```
 
-Now BeardBlock will show us our Block and we can easily use it!
+Now MaterialBlocks will show us our Block and we can easily use it!
 
 
 ## 5. Conclusion
 
-With BeardBlock everything is possible but yet easy to handle for more advanced
-User. Also BeardBlocks Theming system opens up millions of different possibilities
-while being easy and understandable. Additionally BeardBlock Themes can be but don't have
+With MaterialBlocks everything is possible but yet easy to handle for more advanced
+User. Also MaterialBlocks Theming system opens up millions of different possibilities
+while being easy and understandable. Additionally MaterialBlocks Themes can be but don't have
 to be related to bootstrapor any other framework. Just keep in mind that atm their is
 no button where you are able to deactivate Bootstrap.
 

@@ -1,6 +1,6 @@
 <?php
     /*
-		BeardBlock - Froala design-blocks based CMS
+		MaterialBlocks - Froala design-blocks based CMS
 	    Copyright (C) 2017  Robin Krause
 	
 	    This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
                     <p class="text-h2">Dashboard and Control Center.</p>
                     <?php 
                     if($user["type"]==2) {
@@ -77,7 +77,7 @@
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                      <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
+                      <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
                       <p class="text-h2">Dashboard and Control Center.</p>
                     <?php echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard\" class=\"btn btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Back</a></p>"; ?>
                 </div>

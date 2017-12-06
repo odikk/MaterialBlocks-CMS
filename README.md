@@ -1,4 +1,4 @@
-BeardBlock
+MaterialBlocks
 =================
 
 Froala design-blocks based CMS (PHP5 and up). [Support](mailto: easy-dev@web.de)
@@ -9,7 +9,7 @@ Froala design-blocks based CMS (PHP5 and up). [Support](mailto: easy-dev@web.de)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your server or local machine as a CMS. See installation for detailed instructions on how to install BeardBlock.
+These instructions will get you a copy of the project up and running on your server or local machine as a CMS. See installation for detailed instructions on how to install MaterialBlocks.
 
 ### Prerequisites
 
@@ -22,10 +22,10 @@ Before you could start you need to install the following items on your webserver
 
 ### Installing
 
-Follow this simple instructions to install BeardBlock on your webserver.
+Follow this simple instructions to install MaterialBlocks on your webserver.
 
 ```
-1. Clone the latest version of BeardBlock and extract it.
+1. Clone the latest version of MaterialBlocks and extract it.
 2. Copy the containing files and folders into your configured web-path
     * On Linux it should be /var/www/html/ in most cases
 3. Navigate into ./bb-include/ and open bb-config.php and edit it:
@@ -75,13 +75,13 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/EasyDevCpp/BeardBlock/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/EasyDevCpp/MaterialBlocks-CMS/tags). 
 
 ## Authors
 
 * **Robin Krause** - *Initial work* - [EasyDevCpp](https://github.com/EasyDevCpp/)
 
-See also the list of [contributors](https://github.com/EasyDevCpp/BeardBlock/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/EasyDevCpp/MaterialBlocks-CMS/contributors) who participated in this project.
 
 ## License
 
