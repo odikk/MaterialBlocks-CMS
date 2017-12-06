@@ -57,9 +57,9 @@
         }
         for($i=1;$i<=$iFactor;$i++) {
             if(isset($_GET["siteid"])&&isset($_GET["action"])) {
-                echo "<a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=".$_GET["action"]."&list=".$i."\" class=\"btn btn-round\" style=\"min-width: 20px;padding: 9px 6px;margin-left:10px;\">".$i."</a>";
+                echo "<a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=".$_GET["action"]."&list=".$i."\" class=\"btn btn-empty btn-round\" style=\"min-width: 20px;padding: 9px 6px;margin-left:10px;\">".$i."</a>";
             } else if(isset($_GET["site"])&&isset($_GET["page"])) {
-                echo "<a href=\"?site=".$_GET["site"]."&page=".$_GET["page"]."&list=".$i."\" class=\"btn btn-round\" style=\"min-width: 20px;padding: 9px 6px;margin-left:10px;\">".$i."</a>";
+                echo "<a href=\"?site=".$_GET["site"]."&page=".$_GET["page"]."&list=".$i."\" class=\"btn btn-empty btn-round\" style=\"min-width: 20px;padding: 9px 6px;margin-left:10px;\">".$i."</a>";
             }
         }
         ?>
