@@ -19,22 +19,22 @@
     
     function UserViewer() {
     ?>
-    <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
+    <section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
                     <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
-                    <p class="text-h2">Dashboard and Control Center.</p>
+                    <p class="text-h2">Multiple Site Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
-                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Dashboard</a></p>"; 
+                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i> Dashboard</a></p>";
                         }
                     ?>
                 </div>
               </div>
         </div>
     </section>
-    <section class="fdb-block" style="background-image: url(./fdb-imgs/bg_0.svg)">
+    <section class="fdb-block" style="background-color: #212121; color: #EEE;">
     <?php
         $ids=SQLGetUserIDs();
         $count=SQLGetUserRowCount();
