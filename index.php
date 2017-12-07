@@ -19,7 +19,6 @@
 	include_once "bb-include/bb-config.php";
 	include_once "bb-include/bb-session.php";
     include_once "bb-include/bb-elements.php";
-	include_once "bb-include/bb-fdb.php";
 	include_once "bb-include/bb-sql.php";
 	include_once "bb-include/bb-parse.php";
 ?>
