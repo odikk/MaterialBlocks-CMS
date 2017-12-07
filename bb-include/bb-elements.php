@@ -113,4 +113,76 @@
     function HTMLGetCurrentLink() {
         return $_SERVER[REQUEST_URI];
     }
+
+    function HTMLGetDashboardMenu($iSite) {
+        if(UserIsSessionValid(1)) {
+            $user=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
+            if($user["type"]==2) {
+        ?>
+        <header style="background: #181818; color: #eee;" id="dash_nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav0" aria-controls="navbarNav0" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav0">
+                        <ul class="navbar-nav mr-auto ml-auto">
+                            <li class="nav-item">
+                                <?php echo "<a class=\"nav-link\" href=\"?site=dashboard&siteid=".$iSite."\"><i class=\"fa fa-tachometer\" aria-hidden=\"true\"></i> Dashboard</a>"; ?>
+                            </li>
+                            <li class="nav-item">
+                                <?php echo "<a class=\"nav-link\" href=\"?site=dashboard&siteid=".$iSite."&action=add_post\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Post</a>"; ?>
+                            </li>
+                            <li class="nav-item">
+                                <?php echo "<a class=\"nav-link\" href=\"?site=dashboard&siteid=".$iSite."&action=add_page\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a>"; ?>
+                            </li>
+                            <li class="nav-item">
+                                <?php echo "<a class=\"nav-link\" href=\"?site=dashboard&siteid=".$iSite."&action=view_pages\"><i class=\"fa fa-columns\" aria-hidden=\"true\"></i> View Pages</a>"; ?>
+                            </li>
+                            <li class="nav-item">
+                                <?php echo "<a class=\"nav-link\" href=\"?site=dashboard&siteid=".$iSite."&action=settings\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> Settings</a>"; ?>
+                            </li>
+                            <li class="nav-item">
+                                <?php echo "<a class=\"nav-link\" href=\"?site=dashboard&siteid=".$iSite."&action=logout\"><i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i> Log Out</a>"; ?>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <?php
+            } else {
+        ?>
+        <header style="background: #181818; color: #eee;" id="dash_nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav0" aria-controls="navbarNav0" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav0">
+                        <ul class="navbar-nav mr-auto ml-auto">
+                            <li class="nav-item">
+                                <?php echo "<a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."\"><i class=\"fa fa-tachometer\" aria-hidden=\"true\"></i> Dashboard</a>"; ?>
+                            </li>
+                            <li class="nav-item">
+                                <?php echo "<a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=add_post\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a>"; ?>
+                            </li>
+                            <li class="nav-item">
+                                <?php echo "<a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=add_page\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a>"; ?>
+                            </li>
+                            <li class="nav-item">
+                                <?php echo "<a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=view_pages\"><i class=\"fa fa-columns\" aria-hidden=\"true\"></i> View Pages</a>"; ?>
+                            </li>
+                            <li class="nav-item">
+                                <?php echo "<a class=\"btn btn-round btn-empty\" href=\"?site=dashboard&siteid=".$iSite."&action=logout\"><i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i> Log Out</a>"; ?>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <?php
+            }
+        }
+    }
 ?>
