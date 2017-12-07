@@ -52,6 +52,9 @@
 			echo "<meta http-equiv=\"refresh\" content=\"0; URL=install.php\">";
 		}
 		if(isset($_GET["site"])&&$_GET["site"]=="dashboard") {
+			if(isset($_GET["siteid"])) {
+				HTMLGetDashboardMenu($_GET["siteid"]);
+			}
 			DashboardShow();
 		} else {
 			include_once "themes/".SQLGetSiteRow($iSite)["theme"]."/header.php";
@@ -63,6 +66,7 @@
 			include_once "themes/".SQLGetSiteRow($iSite)["theme"]."/contact.php";
 			include_once "themes/".SQLGetSiteRow($iSite)["theme"]."/page.php";
 			
+			HTMLGetDashboardMenu($iSite);
 			BBHeader($iSite);
 			if(isset($_GET["page"])) {
 				if($_GET["page"]=="blog") {
@@ -124,61 +128,6 @@
 				BBPage(SQLGetSiteRow($iSite)["homepage"]);
 			}
 			BBFooter($iSite);
-			if(UserIsSessionValid(1)) {
-				$user=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
-				if($user["type"]==2) {
-			?>
-			<section class="fdb-block" style="padding:5px; background: #252525;">
-				<div class="container">
-					<div class="row justify-content-start">
-						<div class="col-2">
-							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."\"><i class=\"fa fa-tachometer\" aria-hidden=\"true\"></i> Dashboard</a></p>"; ?>
-						</div>
-						<div class="col-2">
-							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=add_post\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a></p>"; ?>
-						</div>
-						<div class="col-2">
-							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=add_page\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a></p>"; ?>
-						</div>
-						<div class="col-2">
-							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=view_pages\"><i class=\"fa fa-columns\" aria-hidden=\"true\"></i> View Pages</a></p>"; ?>
-						</div>
-						<div class="col-2">
-							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=settings\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> Settings</a></p>"; ?>
-						</div>
-						<div class="col-2">
-							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty\" href=\"?site=dashboard&siteid=".$iSite."&action=logout\"><i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i> Log Out</a></p>"; ?>
-						</div>
-					</div>
-				</div>
-			</section>
-			<?php
-				} else {
-			?>
-			<section class="fdb-block" style="padding:5px; background: #252525;">
-				<div class="container">
-					<div class="row justify-content-start">
-						<div class="col-3">
-							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."\"><i class=\"fa fa-tachometer\" aria-hidden=\"true\"></i> Dashboard</a></p>"; ?>
-						</div>
-						<div class="col-2">
-							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=add_post\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a></p>"; ?>
-						</div>
-						<div class="col-2">
-							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=add_page\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a></p>"; ?>
-						</div>
-						<div class="col-2">
-							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=view_pages\"><i class=\"fa fa-columns\" aria-hidden=\"true\"></i> View Pages</a></p>"; ?>
-						</div>
-						<div class="col-3">
-							<?php echo "<p class=\"text-h3\"><a class=\"btn btn-round btn-empty\" href=\"?site=dashboard&siteid=".$iSite."&action=logout\"><i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i> Log Out</a></p>"; ?>
-						</div>
-					</div>
-				</div>
-			</section>
-			<?php
-				}
-			}
 		}
     ?>
 	<?php
