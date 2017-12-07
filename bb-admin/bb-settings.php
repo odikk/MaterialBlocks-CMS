@@ -37,22 +37,22 @@
             echo "<meta http-equiv=\"refresh\" content=\"0; URL=index.php?site=dashboard&siteid=".$_GET["siteid"]."&action=settings"."\">";
         }
     ?>
-    <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
+    <section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
                     <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
-                    <p class="text-h2">Dashboard and Control Center.</p>
+                    <p class="text-h2">Multiple Site Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
-                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Dashboard</a></p>"; 
+                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i> Dashboard</a></p>";
                         }
                     ?>
                 </div>
               </div>
         </div>
     </section>
-    <section class="fdb-block" style="background-image: url(./fdb-imgs/bg_0.svg)">
+    <section class="fdb-block" style="background-color: #212121; color: #EEE;">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-left">
@@ -98,7 +98,7 @@
 						    </div>
                             <div class="row mt-4">
                                 <div class="col">
-                                    <button class="btn" type="submit"><i class="fa fa-save" aria-hidden="true"></i> Save</button>
+                                    <button class="btn btn-round btn-empty" type="submit"><i class="fa fa-save" aria-hidden="true"></i> Save</button>
                                 </div>
                             </div>
                         </form>
@@ -107,7 +107,7 @@
             </div>
         </div>    
     </section>
-    <section class="fdb-block" style="background-image: url(./fdb-imgs/bg_3.svg)">
+    <section class="fdb-block" style="background-color: #242424; color: #EEE;">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-left">
@@ -125,17 +125,19 @@
                     ?>
                         <div class="row">
                             <div class="col mt-4">
+                                <label>Theme Font:</label>
                                 <?php echo "<input class=\"form-control\" name=\"font\" value=\"".$row["font_url"]."\" placeholder=\"Font URL\" type=\"text\" required>"; ?>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">
+                                <label>Theme:</label>
                                 <?php echo "<input class=\"form-control\" name=\"theme\" value=\"".$row["theme"]."\" placeholder=\"Theme\" type=\"text\" required>"; ?>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">
-                                <button class="btn" type="submit"><i class="fa fa-save" aria-hidden="true"></i> Save</button>
+                                <button class="btn btn-round btn-empty" type="submit"><i class="fa fa-save" aria-hidden="true"></i> Save</button>
                             </div>
                         </div>
                     </form>
