@@ -49,7 +49,7 @@
                     <p class="text-h2">Multiple Site Dashboard and Control Center.</p>
 					<?php echo "<p class=\"text-h3\">You are editing: <strong>".$site["title"]."-".$site["description"]."</strong></p>"; ?>
 					<br/>
-					<?php echo "<p class=\"text-h3\"><a target=\"_blank\" href=\"index.php?site=".$iID."\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> View Site</a>"; ?>
+					<?php echo "<p class=\"text-h3\"><a href=\"index.php?site=".$iID."\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> View Site</a>"; ?>
 					<?php echo "<a href=\"index.php?site=dashboard\" class=\"btn btn-round\"><i class=\"fa fa-list\" aria-hidden=\"true\"></i> Show Sites</a></p>"; ?>
         		</div>
       		</div>
@@ -276,7 +276,9 @@
 	?>
 		<section class="fdb-block fdb-image-bg" style="background-color: #181818; color: #EEE;">
         	<div class="container">
-            	<?php //Random quotes ?>
+				<div class="fdb-box">
+            		<?php echo HTMLGetRandomQuote(); ?>
+				</div>
         	</div>
     	</section>
 	<?php
