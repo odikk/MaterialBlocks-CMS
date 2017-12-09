@@ -467,7 +467,7 @@
                     <?php 
                         if(isset($_GET["siteid"])) {
                             echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."&action=view_pages\" class=\"btn btn-round btn-empty\"><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i> View Pages</a>";
-                            echo "<a target=\"_blank\" href=\"index.php?site=".$_GET["siteid"]."&page=".$iPageID."\" class=\"btn btn-white btn-round\"><i class=\"fa fa-code\" aria-hidden=\"true\"></i> View Page</a></p>";
+                            echo "<a href=\"index.php?site=".$_GET["siteid"]."&page=".$iPageID."\" class=\"btn btn-white btn-round\"><i class=\"fa fa-code\" aria-hidden=\"true\"></i> View Page</a></p>";
                         }
                     ?>
                 </div>

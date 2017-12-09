@@ -187,7 +187,7 @@
                     <?php 
                         if(isset($_GET["siteid"])) {
                             echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i> Dashboard</a>";
-                            echo "<a target=\"_blank\" href=\"index.php?site=".$_GET["siteid"]."&page=blog&post=".$iPostID."\" class=\"btn btn-white btn-round\"><i class=\"fa fa-code\" aria-hidden=\"true\"></i> View Post</a></p>";
+                            echo "<a href=\"index.php?site=".$_GET["siteid"]."&page=blog&post=".$iPostID."\" class=\"btn btn-white btn-round\"><i class=\"fa fa-code\" aria-hidden=\"true\"></i> View Post</a></p>";
                         }
                     ?>
                 </div>
