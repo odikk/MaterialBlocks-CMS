@@ -449,10 +449,15 @@
             if(isset($_GET["block"])) {
                 SQLDeleteBlock($_GET["block"]);
                 $row=SQLGetPageRow($iPageID);
-                if(count(explode("|",$row["blockids"]))==1) {
+                $ids=$row["blockids"];
+                if(count(explode("|",$ids))==1) {
                     $out="";
                 } else {
-                    $out=str_replace("|".$_GET["block"],"",$row["blockids"]);
+                    if($_GET["block"]==explode("|",$ids)[0]) {
+                        $out=str_replace($_GET["block"]."|","",$ids);
+                    } else {
+                        $out=str_replace("|".$_GET["block"],"",$ids);
+                    }
                 }
                 SQLSetPageRow($iPageID,$row["title"],$out);
             }
