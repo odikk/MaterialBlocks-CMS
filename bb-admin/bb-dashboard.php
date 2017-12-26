@@ -295,6 +295,10 @@
 					if($row["type"]==2) {
 						UserViewer();
 					}
+				} else if($_GET["action"]=="edit_user") {
+					if($row["type"]==2) {
+						UserEdit();
+					}
 				} else if($_GET["action"]=="settings") {
 					if($row["type"]==2) {
 						SettingsShow($_GET["siteid"]);

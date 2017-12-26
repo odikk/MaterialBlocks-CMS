@@ -245,6 +245,10 @@
 		__sqlUpdate("bb_user",$iID,"password",password_hash($sPassword,PASSWORD_DEFAULT));
 		__sqlUpdate("bb_user",$iID,"email",$sEmail);
 	}
+
+	function SQLSetUserType($iID,$iType) {
+		__sqlUpdate("bb_user",$iID,"type",$iType);
+	}
 	
 	function SQLAddUserRow($sName,$sPassword,$sEmail,$iType) {
 		$sFields="username,password,email,type";
