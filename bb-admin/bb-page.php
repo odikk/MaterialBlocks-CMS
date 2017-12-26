@@ -316,6 +316,9 @@
                     <div class="row text-center justify-content-center pt-5">
                         <div class="col-12 col-md-7">
                             <h1>Edit Block Options.</h1>
+                            <br/>
+                            <?php echo "<a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=edit_page&page=".$iPageID."&block=".$blockids[$i]."&move=up#block_".$i."\" style=\"min-width: 40px;padding: 8px 6px;margin-left:10px;\" class=\"btn btn-round btn-empty\"><i class=\"fa fa-angle-up\" aria-hidden=\"true\"></i></a>";
+                            echo "<a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=edit_page&page=".$iPageID."&block=".$blockids[$i]."&move=down#block_".$i."\" style=\"min-width: 40px;padding: 8px 6px;margin-left:10px;\" class=\"btn btn-round btn-empty\"><i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i></a>"; ?>
                         </div>
                     </div>
                     <div class="row justify-content-center pt-4">
@@ -460,6 +463,42 @@
                     }
                 }
                 SQLSetPageRow($iPageID,$row["title"],$out);
+            }
+        } else if(isset($_GET["move"])) {
+            if(isset($_GET["block"])) {
+                $row=SQLGetPageRow($iPageID);
+                $ids=$row["blockids"];
+                $pos=0;
+                $out="";
+                if($_GET["move"]=="up") {
+                    if($_GET["block"]!=explode("|",$ids)[0]) { //First index can't be moved up!!!
+                        for($i=0;$i<count(explode("|",$ids));$i++) {
+                            if($_GET["block"]==explode("|",$ids)[$i]) {
+                                $pos=$i;
+                                break;
+                            }
+                        }
+                        $temp=explode("|",$ids)[$pos-1];
+                        $out=str_replace($temp,"temp",$ids);
+                        $out=str_replace($_GET["block"],$temp,$out);
+                        $out=str_replace("temp",$_GET["block"],$out);
+                        SQLSetPageRow($iPageID,$row["title"],$out);
+                    }
+                } else {
+                    if($_GET["block"]!=explode("|",$ids)[count(explode("|",$ids))-1]) { //last index can't be moved down!!!
+                        for($i=0;$i<count(explode("|",$ids));$i++) {
+                            if($_GET["block"]==explode("|",$ids)[$i]) {
+                                $pos=$i;
+                                break;
+                            }
+                        }
+                        $temp=explode("|",$ids)[$pos+1];
+                        $out=str_replace($temp,"temp",$ids);
+                        $out=str_replace($_GET["block"],$temp,$out);
+                        $out=str_replace("temp",$_GET["block"],$out);
+                        SQLSetPageRow($iPageID,$row["title"],$out);
+                    }
+                }
             }
         }
     ?>
