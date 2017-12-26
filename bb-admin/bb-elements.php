@@ -1,6 +1,6 @@
 <?php
     /*
-		BeardBlock - Froala design-blocks based CMS
+		MaterialBlocks - Froala design-blocks based CMS
 	    Copyright (C) 2017  Robin Krause
 	
 	    This program is free software: you can redistribute it and/or modify
@@ -96,22 +96,22 @@
             SQLSetSocialRow($iID,$name_changes,$href_changes);
         }
     ?>
-	<section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
+	<section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
-                    <p class="text-h2">Dashboard and Control Center.</p>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
+                    <p class="text-h2">Multiple Site Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
-                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Dashboard</a></p>";
+                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i> Dashboard</a></p>";
                         }
                     ?>
                 </div>
               </div>
         </div>
     </section>
-    <section class="fdb-block" style="background-image: url(./fdb-imgs/alt_wide_1.svg)" id="header">
+    <section class="fdb-block" style="background-color: #212121; color: #EEE;" id="header">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-left">
@@ -179,7 +179,7 @@
             </div>
         </div>
     </section>
-    <section class="fdb-block" style="background-image: url(./fdb-imgs/bg_c_3.svg)" id="footer">
+    <section class="fdb-block" style="background-color: #242424; color: #EEE;" id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-left">
@@ -239,7 +239,7 @@
                         </div>
                         <div class="row mt-5">
                             <div class="col">
-                                <button class="btn btn-black btn-round btn-empty" type="submit"><i class="fa fa-save"></i> Save</button>
+                                <button class="btn btn-round btn-empty" type="submit"><i class="fa fa-save"></i> Save</button>
                             </div>
                         </div>
                     </form>
@@ -247,7 +247,7 @@
             </div>
         </div>
     </section>
-    <section class="fdb-block pb-0" style="background-image: url(./fdb-imgs/bg_3.svg)" id="menu">
+    <section class="fdb-block pb-0" style="background-color: #212121; color: #EEE;" id="menu">
         <div class="container">
             <div class="row text-center justify-content-center">
                 <div class="col-12 col-md-8 col-lg-7">
@@ -278,12 +278,12 @@
                     ?>
                         <div class="row mt-3">
                             <div class="col text-center">
-                                <?php echo "<a href=\"?site=dashboard&siteid=".$iID."&action=elements&add_menu_entry=true#menu\" class=\"btn btn-round btn-empty\" style=\"min-width:5px;padding:9px 9px;\"><i class=\"fa fa-plus-circle\"></i></a>"; ?> 
+                                <?php echo "<a href=\"?site=dashboard&siteid=".$iID."&action=elements&add_menu_entry=true#menu\" class=\"btn btn-white btn-round btn-empty\" style=\"min-width:5px;padding:9px 9px;\"><i class=\"fa fa-plus-circle\"></i></a>"; ?> 
                             </div>
                         </div>
                         <div class="row mt-5">
                             <div class="col">
-                                <button type="submit" class="btn btn-black btn-round btn-empty"><i class="fa fa-save"></i> Save</button>
+                                <button type="submit" class="btn btn-round btn-empty"><i class="fa fa-save"></i> Save</button>
                             </div>
                         </div>
                     </form>
@@ -292,7 +292,7 @@
             <div class="row-100"></div>
         </div>
     </section>
-    <section class="fdb-block pb-0" style="background-image: url(./fdb-imgs/bg_3.svg)" id="social">
+    <section class="fdb-block pb-0" style="background-color: #212121; color: #EEE;" id="social">
         <div class="container">
             <div class="row text-center justify-content-center">
                 <div class="col-12 col-md-8 col-lg-7">
@@ -323,12 +323,12 @@
                     ?>
                         <div class="row mt-3">
                             <div class="col text-center">
-                                <?php echo "<a href=\"?site=dashboard&siteid=".$iID."&action=elements&add_social_entry=true#social\" class=\"btn btn-round btn-empty\" style=\"min-width:5px;padding:9px 9px;\"><i class=\"fa fa-plus-circle\"></i></a>"; ?> 
+                                <?php echo "<a href=\"?site=dashboard&siteid=".$iID."&action=elements&add_social_entry=true#social\" class=\"btn btn-white btn-round btn-empty\" style=\"min-width:5px;padding:9px 9px;\"><i class=\"fa fa-plus-circle\"></i></a>"; ?> 
                             </div>
                         </div>
                         <div class="row mt-5">
                             <div class="col">
-                                <button type="submit" class="btn btn-black btn-round btn-empty"><i class="fa fa-save"></i> Save</button>
+                                <button type="submit" class="btn btn-round btn-empty"><i class="fa fa-save"></i> Save</button>
                             </div>
                         </div>
                     </form>

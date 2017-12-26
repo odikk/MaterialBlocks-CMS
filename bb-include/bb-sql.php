@@ -1,6 +1,6 @@
 <?php
 	/*
-		BeardBlock - Froala design-blocks based CMS
+		MaterialBlocks - Froala design-blocks based CMS
 	    Copyright (C) 2017  Robin Krause
 	
 	    This program is free software: you can redistribute it and/or modify

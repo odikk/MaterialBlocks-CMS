@@ -1,6 +1,6 @@
 <?php
     /*
-		BeardBlock - Froala design-blocks based CMS
+		MaterialBlocks - Froala design-blocks based CMS
 	    Copyright (C) 2017  Robin Krause
 	
 	    This program is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BeardBlock Installation</title>
+    <title>MaterialBlocks-Installation</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
@@ -31,11 +31,11 @@
     <link type="text/css" rel="stylesheet" href="./themes/default/default.css">
 </head>
 <body>
-    <section class="fdb-block bg-dark fdb-viewport" style="background-image: url(./fdb-imgs/bg_c_1.svg);">
+    <section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
         <div class="container align-items-center justify-content-center d-flex">
             <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-10 col-lg-8">
-                    <h1>BeardBlock Installation</h1>
+                    <h1>MaterialBlocks Installation</h1>
                     <h3><strong>Make sure you edited the bb-config.php!</strong></h3>
                 </div>
             </div>
@@ -57,7 +57,7 @@
     <?php
         if(!isset($_GET["action"])||(isset($_GET["action"])&&$_GET["action"]=="step1")) {
     ?>
-    <section class="fdb-block" style="background-image: url(./fdb-imgs/bg_4.svg)">
+    <section class="fdb-block" style="background-color: #212121; color: #eee;">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-left">
@@ -86,7 +86,7 @@
                             </div>
                             <div class="row mt-4">
                                 <div class="col">
-                                    <button class="btn" type="submit">Next <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                                    <button class="btn btn-round btn-empty" type="submit">Next <i class="fa fa-angle-right" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -95,11 +95,11 @@
             </div>
         </div>    
     </section>
-    <section class="fdb-block fdb-image-bg" style="background: url(./fdb-imgs/alt_wide_3.svg)">
+    <section class="fdb-block fdb-image-bg" style="background-color: #181818; color: #EEE;">
         <div class="container">
             <div class="row text-center">
                 <div class="col-12">
-                    <h1><a href="?action=step2" class="btn btn-round btn-black btn-empty">I already filled out this Form <i class="fa fa-angle-right" aria-hidden="true"></i></a></h1>
+                    <h1><a href="?action=step2" class="btn btn-round btn-empty">Skip <i class="fa fa-angle-right" aria-hidden="true"></i></a></h1>
                 </div>
             </div>
         </div>
@@ -110,7 +110,7 @@
     <?php
         if(isset($_GET["action"])&&$_GET["action"]=="step2") {
     ?>
-    <section class="fdb-block" style="background-image: url(./fdb-imgs/bg_3.svg)">
+    <section class="fdb-block" style="background-color: #212121; color: #eee;">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-left">
@@ -139,7 +139,7 @@
                             </div>
                             <div class="row mt-4">
                                 <div class="col">
-                                    <button class="btn" type="submit">Next <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                                    <button class="btn btn-round btn-empty" type="submit">Next <i class="fa fa-angle-right" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -148,11 +148,14 @@
             </div>
         </div>    
     </section>
-    <section class="fdb-block fdb-image-bg" style="background: url(./fdb-imgs/alt_wide_3.svg)">
+    <section class="fdb-block fdb-image-bg" style="background-color: #181818; color: #eee;">
         <div class="container">
             <div class="row text-center">
                 <div class="col-12">
-                    <h1><a href="?action=step3" class="btn btn-round btn-black btn-empty">I already filled out this Form <i class="fa fa-angle-right" aria-hidden="true"></i></a></h1>
+                    <h1>
+                        <a href="?action=step1" class="btn btn-round btn-empty"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</a>
+                        <a href="?action=step3" class="btn btn-round btn-empty">Skip <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    </h1>
                 </div>
             </div>
         </div>
@@ -163,15 +166,20 @@
     <?php
         if(isset($_GET["action"])&&$_GET["action"]=="step3") {
     ?>
-    <section class="fdb-block bg-dark" style="background-image: url(./fdb-imgs/bg_4.svg)">
+    <section class="fdb-block" style="background-color: #212121; color: #eee;">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-left">
-                    <h1>Finished!</h1>
-                    <p class="text-h3">BeardBlock is now ready to use!</p>
-                    <h3><strong>Important: Delete this file from your server!</strong></h3>
+                    <h1>BAMMM!</h1>
+                    <p class="text-h2">MaterialBlocks is now ready to use!</p>
+                    <br/>
+                    <p class="text-h3">Read our GUIDE.md to become a Master in handling MaterialBlocks or read THEMING.md to create your very own custom Theme completly from scratch or based on the Default Theme!</p>
+                    <br/>
+                    <br/>
+                    <h3><strong>Important: Delete the install.php File located in MaterialBlocks root!</strong></h3>
                     <p class="mt-4">
-                        <a class="btn btn-round btn-black btn-empty" href="index.php">View Page <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        <a class="btn btn-round" href="index.php?site=dashboard">Log In <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        <a class="btn btn-round btn-empty" href="index.php">View Page <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                     </p>
                 </div>
             </div>

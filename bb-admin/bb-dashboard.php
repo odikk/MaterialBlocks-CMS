@@ -1,6 +1,6 @@
 <?php
     /*
-		BeardBlock - Froala design-blocks based CMS
+		MaterialBlocks - Froala design-blocks based CMS
 	    Copyright (C) 2017  Robin Krause
 	
 	    This program is free software: you can redistribute it and/or modify
@@ -39,15 +39,18 @@
 
 	function DashboardMain($iID) {
 		$row=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
+		$site=SQLGetSiteRow($iID);
 	?>
-	<section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
-    	<div class="container justify-content-center align-items-center d-flex">
-      		<div class="row justify-content-center text-center">
-        		<div class="col-12 col-md-8">
-          			<h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
-          			<p class="text-h2">Dashboard and Control Center.</p>
-					<?php echo "<p class=\"text-h3\"><a href=\"index.php?site=".$iID."\" class=\"btn btn-black btn-empty btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Home</a></p>"; ?>
-					<?php echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard\" class=\"btn btn-round\"><i class=\"fa fa-list\" aria-hidden=\"true\"></i> Show Sites</a></p>"; ?>
+	<section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
+        <div class="container justify-content-center align-items-center d-flex">
+              <div class="row justify-content-center text-center">
+                <div class="col-12 col-md-8">
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
+                    <p class="text-h2">Multiple Site Dashboard and Control Center.</p>
+					<?php echo "<p class=\"text-h3\">You are editing: <strong>".$site["title"]."-".$site["description"]."</strong></p>"; ?>
+					<br/>
+					<?php echo "<p class=\"text-h3\"><a href=\"index.php?site=".$iID."\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> View Site</a>"; ?>
+					<?php echo "<a href=\"index.php?site=dashboard\" class=\"btn btn-round\"><i class=\"fa fa-list\" aria-hidden=\"true\"></i> Show Sites</a></p>"; ?>
         		</div>
       		</div>
     	</div>
@@ -55,8 +58,11 @@
 	<?php
 		if($row["type"]==2) {
 	?>
-	<section class="fdb-block" style="background-image: url(./fdb-imgs/bg_0.svg)">
+	<section class="fdb-block" style="background-color: #212121; color: #EEE;">
     	<div class="container">
+			<div class="row">
+				<h2>Pages:</h2>
+			</div>
       		<div class="row text-center">
         		<div class="col-12 col-md-8 m-auto col-lg-4">
           			<div class="fdb-box">
@@ -82,7 +88,7 @@
         		</div>
         		<div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
           			<div class="fdb-box">
-					  	<h2><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Custom</h2>
+					  	<h2><i class="fa fa-plus-circle" aria-hidden="true"></i> Add PHPPage</h2>
 						<br/>
 						<?php
 						if(isset($_GET["siteid"])) {
@@ -95,6 +101,9 @@
     	</div>
 		<br/>
 		<div class="container">
+			<div class="row">
+				<h2>Community:</h2>
+			</div>
       		<div class="row text-center">
         		<div class="col-12 col-md-8 m-auto col-lg-4">
           			<div class="fdb-box">
@@ -133,6 +142,9 @@
     	</div>
 		<br/>
 		<div class="container">
+			<div class="row">
+				<h2>Settings:</h2>
+			</div>
       		<div class="row text-center">
 			  	<div class="col-12 col-md-8 m-auto col-lg-4">
           			<div class="fdb-box">
@@ -157,12 +169,12 @@
           			</div>
         		</div>
         		<div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
-          			<div class="fdb-box">
+          			<div class="fdb-box" style="background-color: #F44336; color: #eee;">
 					  	<h2><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</h2>
 						<br/>
 						<?php 
 						if(isset($_GET["siteid"])) {
-							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=logout\" class=\"btn btn-empty btn-round\">Log Out</a></p>";
+							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=logout\" class=\"btn btn-empty btn-white btn-round\">Log Out</a></p>";
 						}
 						?>
           			</div>
@@ -173,8 +185,11 @@
 	<?php
 		} else {
 	?>
-	<section class="fdb-block" style="background-image: url(./fdb-imgs/bg_0.svg)">
+	<section class="fdb-block" style="background-color: #212121; color: #EEE;">
     	<div class="container">
+			<div class="row">
+				<h2>Pages:</h2>
+			</div>
       		<div class="row text-center">
         		<div class="col-12 col-md-8 m-auto col-lg-4">
           			<div class="fdb-box">
@@ -200,7 +215,7 @@
         		</div>
         		<div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
           			<div class="fdb-box">
-					  	<h2><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Custom</h2>
+					  	<h2><i class="fa fa-plus-circle" aria-hidden="true"></i> Add PHPPage</h2>
 						<br/>
 						<?php
 						if(isset($_GET["siteid"])) {
@@ -213,6 +228,9 @@
     	</div>
 		<br/>
 		<div class="container">
+			<div class="row">
+				<h2>Community:</h2>
+			</div>
       		<div class="row text-center">
         		<div class="col-12 col-md-8 m-auto col-lg-4">
           			<div class="fdb-box">
@@ -237,12 +255,12 @@
           			</div>
         		</div>
         		<div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
-          			<div class="fdb-box">
+          			<div class="fdb-box" style="background-color: #F44336; color: #eee;">
 					  	<h2><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</h2>
 						<br/>
 						<?php 
 						if(isset($_GET["siteid"])) {
-							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=logout\" class=\"btn btn-empty btn-round\">Log Out</a></p>";
+							echo "<p><a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=logout\" class=\"btn btn-empty btn-white btn-round\">Log Out</a></p>";
 						}
 						?>
           			</div>
@@ -252,6 +270,18 @@
   	</section>
 	<?php
 		}
+	}
+
+	function DashboardFooter() {
+	?>
+		<section class="fdb-block fdb-image-bg" style="background-color: #181818; color: #EEE;">
+        	<div class="container">
+				<div class="fdb-box">
+            		<?php echo HTMLGetRandomQuote(); ?>
+				</div>
+        	</div>
+    	</section>
+	<?php
 	}
 
 	function DashboardShow() {
@@ -330,6 +360,7 @@
 					SiteChoser();
 				}
 			}
+			DashboardFooter();
 		} else {
 			if(isset($_GET["action"])&&$_GET["action"]=="login") {
 				if(isset($_POST["email"])&&isset($_POST["password"])) {

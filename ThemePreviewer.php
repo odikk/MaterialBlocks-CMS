@@ -1,6 +1,6 @@
 <?php
     /*
-		BeardBlock - Froala design-blocks based CMS
+		MaterialBlocks - Froala design-blocks based CMS
 	    Copyright (C) 2017  Robin Krause
 	
 	    This program is free software: you can redistribute it and/or modify
@@ -60,7 +60,7 @@
     } else {
     ?>
         <head>
-    	    <title>Dashboard</title>
+    	    <title>ThemePreviewer</title>
     	    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
     	    <link rel="stylesheet" href="./res/bootstrap/css/bootstrap.min.css">
     	    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">

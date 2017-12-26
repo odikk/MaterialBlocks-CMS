@@ -1,6 +1,6 @@
 <?php
     /*
-		BeardBlock - Froala design-blocks based CMS
+		MaterialBlocks - Froala design-blocks based CMS
 	    Copyright (C) 2017  Robin Krause
 	
 	    This program is free software: you can redistribute it and/or modify
@@ -34,22 +34,22 @@
 			}
 		}
     ?>
-    <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
+    <section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
-                    <p class="text-h2">Dashboard and Control Center.</p>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
+                    <p class="text-h2">Multiple Site Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
-                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Dashboard</a></p>";
+                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i> Dashboard</a></p>";
                         }
                     ?>
                 </div>
               </div>
         </div>
     </section>
-	<section class="fdb-block" style="background-image: url(./fdb-imgs/bg_c_3.svg)">
+	<section class="fdb-block" style="background-color: #212121; color: #EEE;">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-left">
@@ -75,7 +75,7 @@
 						</div>
                         <div class="row mt-4">
                             <div class="col">
-                                <button class="btn btn-black btn-round btn-empty" type="submit"><i class="fa fa-plus-circle"></i> Add Page</button>
+                                <button class="btn btn-round btn-empty" type="submit"><i class="fa fa-plus-circle"></i> Add Page</button>
                             </div>
                         </div>
                     </form>
@@ -103,22 +103,22 @@
 			}
 		}
     ?>
-    <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
+    <section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
-                    <p class="text-h2">Dashboard and Control Center.</p>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
+                    <p class="text-h2">Multiple Site Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
-                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Dashboard</a></p>";
+                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i> Dashboard</a></p>";
                         }
                     ?>
                 </div>
               </div>
         </div>
     </section>
-	<section class="fdb-block" style="background-image: url(./fdb-imgs/bg_c_3.svg)">
+	<section class="fdb-block" style="background-color: #212121; color: #EEE;">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-left">
@@ -149,7 +149,7 @@
 						</div>
                         <div class="row mt-4">
                             <div class="col">
-                                <button class="btn btn-black btn-round btn-empty" type="submit"><i class="fa fa-plus-circle"></i> Add Custom Page</button>
+                                <button class="btn btn-round btn-empty" type="submit"><i class="fa fa-plus-circle"></i> Add Custom Page</button>
                             </div>
                         </div>
                     </form>
@@ -163,22 +163,22 @@
     function PageViewPages($iID) {
         $user=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
     ?>
-    <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
+    <section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
-                    <p class="text-h2">Dashboard and Control Center.</p>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
+                    <p class="text-h2">Multiple Site Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
-                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-round\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i> Dashboard</a></p>";
+                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."\" class=\"btn btn-empty btn-round\"><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i> Dashboard</a></p>";
                         }
                     ?>
                 </div>
               </div>
         </div>
     </section>
-    <section class="fdb-block bg-dark" style="background-image: url(./fdb-imgs/bg_0.svg)">
+	<section class="fdb-block" style="background-color: #212121; color: #EEE;">
     <?php
         $ids=SQLGetPageIDs();
         $count=SQLGetPageRowCount();
@@ -211,12 +211,12 @@
                     }
                     echo "<h2>".$row["title"]."</h2>";
                     if($row["type"]==0) {
-                        echo "<a href=\"?site=dashboard&siteid=".$iID."&action=edit_page&page=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 30px;\"><i class=\"fa fa-pencil\"></i></a>";
+                        echo "<a href=\"?site=dashboard&siteid=".$iID."&action=edit_page&page=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 45px;padding: 9px 6px;margin-left:10px;\"><i class=\"fa fa-pencil\"></i></a>";
                     } else {
-                        echo "<a href=\"?site=dashboard&siteid=".$iID."&action=edit_custom_page&page=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 30px;\"><i class=\"fa fa-pencil\"></i></a>";
+                        echo "<a href=\"?site=dashboard&siteid=".$iID."&action=edit_custom_page&page=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 45px;padding: 9px 6px;margin-left:10px;\"><i class=\"fa fa-pencil\"></i></a>";
                     }
                     if($row["title"]!="Home"&&$user["type"]==2) {
-                        echo "<a href=\"?site=dashboard&siteid=".$iID."&action=del_page&page=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 30px;\"><i class=\"fa fa-minus-circle\"></i></a>";
+                        echo "<a href=\"?site=dashboard&siteid=".$iID."&action=del_page&page=".$row["id"]."\" class=\"btn btn-round btn-empty\" style=\"min-width: 45px;padding: 9px 6px;margin-left:10px;\"><i class=\"fa fa-minus-circle\"></i></a>";
                     }
                     ?>
                                 </div>
@@ -238,7 +238,7 @@
         ?>
             <div class="container">
                 <div class="row text-center">
-                    <h1>:( Nothing to show!</h1>    
+                    <h1>Nothing to show! :(</h1>    
                 </div>
             </div>
         <?php
@@ -256,13 +256,15 @@
     function PageShowPreview($iPageID) {
         $row=SQLGetPageRow($iPageID);
 		if($row["blockids"]!="") {
-            echo "<section class=\"fdb-block bg-gray\" id=\"preview\">";
-			echo "<div class=\"container\">";
-			echo "<div class=\"row justify-content-center\">";
-			echo "<h1>Page Preview:</h1>";
-			echo "</div>";
-			echo "</div>";
-            echo "</section>";
+        ?>
+            <section class="fdb-block" style="background-color: #181818; color: #EEE;" id="preview">
+			    <div class="container">
+			        <div class="row justify-content-center">
+			            <p class="text-h1">Page Preview:</p>
+			        </div>
+			    </div>
+            </section>
+        <?php
 			$blockids=explode("|",$row["blockids"]);
 			for($i=0;$i<count($blockids);$i++) {
                 $block=SQLGetBlockRow($blockids[$i]);
@@ -309,7 +311,7 @@
                     call_user_func($block["type"],$block["imgs"],$block["texts"],$block["headings"],$block["links"]);
                 }
             ?>
-            <?php echo "<section class=\"fdb-block pt-0\" style=\"background-image: url(./fdb-imgs/bg_c_3.svg)\" id=\"block_".$i."\">"; ?>
+            <?php echo "<section class=\"fdb-block pt-0\" style=\"background-color: #181818; color: #EEE;\" id=\"block_".$i."\">"; ?>
                 <div class="container">
                     <div class="row text-center justify-content-center pt-5">
                         <div class="col-12 col-md-7">
@@ -456,23 +458,23 @@
             }
         }
     ?>
-    <section class="fdb-block fdb-viewport" style="background-image: url(./fdb-imgs/bg_2.svg)">
+    <section class="fdb-block fdb-viewport" style="background-color: #242424; color: #EEE;">
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
-                    <p class="text-h2">Dashboard and Control Center.</p>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
+                    <p class="text-h2">Multiple Site Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
-                            echo "<p class=\"text-h3\"><a target=\"_blank\" href=\"index.php?site=".$_GET["siteid"]."&page=".$iPageID."\" class=\"btn btn-black btn-empty btn-round\"><i class=\"fa fa-code\" aria-hidden=\"true\"></i> View Page</a></p>";
-                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."&action=view_pages\" class=\"btn btn-round\"><i class=\"fa fa-arrow-left\" aria-hidden=\"true\"></i> View Pages</a></p>";
+                            echo "<p class=\"text-h3\"><a href=\"index.php?site=dashboard&siteid=".$_GET["siteid"]."&action=view_pages\" class=\"btn btn-round btn-empty\"><i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i> View Pages</a>";
+                            echo "<a href=\"index.php?site=".$_GET["siteid"]."&page=".$iPageID."\" class=\"btn btn-white btn-round\"><i class=\"fa fa-code\" aria-hidden=\"true\"></i> View Page</a></p>";
                         }
                     ?>
                 </div>
               </div>
         </div>
     </section>
-	<section class="fdb-block" style="background-image: url(./fdb-imgs/bg_c_3.svg)" id="info">
+	<section class="fdb-block" style="background-color: #212121; color: #EEE;" id="info">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-left">
@@ -490,7 +492,7 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col">
-                                <button class="btn btn-black btn-round btn-empty" type="submit"><i class="fa fa-chain"></i> Update Page</button>
+                                <button class="btn btn-round btn-empty" type="submit"><i class="fa fa-chain"></i> Update Page</button>
                             </div>
                         </div>
                     </form>
@@ -501,7 +503,7 @@
     <?php
         PageShowPreview($iPageID);
     ?>
-    <section class="fdb-block p-2" id="navigator">
+    <section class="fdb-block p-2" style="background-color: #212121; color: #EEE;" id="navigator">
         <div class="container">
             <div class="row justify-content-center">
                 <h2>Add a Block</h2>
@@ -544,11 +546,11 @@
                     }
                     call_user_func($_GET["show_blocks"].$i,rtrim($imgs,'|'),rtrim($texts,'|'),rtrim($headings,'|'),rtrim($links,'|'));
                     ?>
-                    <section class="fdb-block p-2 bg-dark" style="background-image: url(./fdb-imgs/bg_c_2.svg)">
+                    <section class="fdb-block p-2" style="background-color: #181818; color: #EEE;">
                         <div class="container-fluid">
                             <p class="m-0 text-center">
                                 <?php 
-                                echo "<a class=\"btn btn-white btn-round btn-empty m-1\" href=\"?site=dashboard&siteid=".$iID."&action=edit_page&page=".$iPageID."&add_block=".$_GET["show_blocks"].$i."#preview\">Choose</a>";
+                                echo "<a class=\"btn btn-round btn-empty m-1\" href=\"?site=dashboard&siteid=".$iID."&action=edit_page&page=".$iPageID."&add_block=".$_GET["show_blocks"].$i."#preview\">Choose</a>";
                                 ?>
                             </p>
                         </div>
@@ -583,7 +585,7 @@
         <div class="container justify-content-center align-items-center d-flex">
               <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-8">
-                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> BeardBlock</h1>
+                    <h1><i class="fa fa-tachometer" aria-hidden="true"></i> MaterialBlocks</h1>
                     <p class="text-h2">Dashboard and Control Center.</p>
                     <?php 
                         if(isset($_GET["siteid"])) {
