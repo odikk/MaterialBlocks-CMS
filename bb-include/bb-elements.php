@@ -162,19 +162,19 @@
                     <div class="collapse navbar-collapse" id="navbarNav0">
                         <ul class="navbar-nav mr-auto ml-auto">
                             <li class="nav-item">
-                                <?php echo "<a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."\"><i class=\"fa fa-tachometer\" aria-hidden=\"true\"></i> Dashboard</a>"; ?>
+                                <?php echo "<a class=\"nav-link\" href=\"?site=dashboard&siteid=".$iSite."\"><i class=\"fa fa-tachometer\" aria-hidden=\"true\"></i> Dashboard</a>"; ?>
                             </li>
                             <li class="nav-item">
-                                <?php echo "<a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=add_post\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a>"; ?>
+                                <?php echo "<a class=\"nav-link\" href=\"?site=dashboard&siteid=".$iSite."&action=add_post\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Post</a>"; ?>
                             </li>
                             <li class="nav-item">
-                                <?php echo "<a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=add_page\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a>"; ?>
+                                <?php echo "<a class=\"nav-link\" href=\"?site=dashboard&siteid=".$iSite."&action=add_page\"><i class=\"fa fa-plus-circle\" aria-hidden=\"true\"></i> Add Page</a>"; ?>
                             </li>
                             <li class="nav-item">
-                                <?php echo "<a class=\"btn btn-round btn-empty btn-white\" href=\"?site=dashboard&siteid=".$iSite."&action=view_pages\"><i class=\"fa fa-columns\" aria-hidden=\"true\"></i> View Pages</a>"; ?>
+                                <?php echo "<a class=\"nav-link\" href=\"?site=dashboard&siteid=".$iSite."&action=view_pages\"><i class=\"fa fa-columns\" aria-hidden=\"true\"></i> View Pages</a>"; ?>
                             </li>
                             <li class="nav-item">
-                                <?php echo "<a class=\"btn btn-round btn-empty\" href=\"?site=dashboard&siteid=".$iSite."&action=logout\"><i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i> Log Out</a>"; ?>
+                                <?php echo "<a class=\"nav-link\" href=\"?site=dashboard&siteid=".$iSite."&action=logout\"><i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i> Log Out</a>"; ?>
                             </li>
                         </ul>
                     </div>
