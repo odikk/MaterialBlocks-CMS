@@ -79,8 +79,13 @@
                 $name_changes="";
                 $href_changes="";
             } else {
-                $name_changes=str_replace("|".$elem[0],"",$row["link_names"]);
-                $href_changes=str_replace("|".$elem[1],"",$row["link_hrefs"]);
+                if($elem[0]==explode("|",$row["link_names"])[0]) {
+                    $name_changes=str_replace($elem[0]."|","",$row["link_names"]);
+                    $href_changes=str_replace($elem[1]."|","",$row["link_hrefs"]);
+                } else {
+                    $name_changes=str_replace("|".$elem[0],"",$row["link_names"]);
+                    $href_changes=str_replace("|".$elem[1],"",$row["link_hrefs"]);
+                }
             }
             SQLSetMenuRow($iID,$name_changes,$href_changes);
         } else if(isset($_GET["del_social_entry"])) {
@@ -90,8 +95,13 @@
                 $name_changes="";
                 $href_changes="";
             } else {
-                $name_changes=str_replace("|".$elem[0],"",$row["social_icons"]);
-                $href_changes=str_replace("|".$elem[1],"",$row["social_hrefs"]);
+                if($elem[0]==explode("|",$row["social_icons"])[0]) {
+                    $name_changes=str_replace($elem[0]."|","",$row["social_icons"]);
+                    $href_changes=str_replace($elem[1]."|","",$row["social_hrefs"]);
+                } else {
+                    $name_changes=str_replace("|".$elem[0],"",$row["social_icons"]);
+                    $href_changes=str_replace("|".$elem[1],"",$row["social_hrefs"]);
+                }
             }
             SQLSetSocialRow($iID,$name_changes,$href_changes);
         }
