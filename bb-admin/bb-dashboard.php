@@ -23,6 +23,7 @@
 	include_once "bb-elements.php";
 	include_once "bb-blog.php";
 	include_once "bb-page.php";
+	include_once "bb-plugins.php";
 
 	function DashboardGetHead() {
 	?>
@@ -272,16 +273,55 @@
 		}
 	}
 
-	function DashboardFooter() {
-	?>
-		<section class="fdb-block fdb-image-bg" style="background-color: #181818; color: #EEE;">
-        	<div class="container">
-				<div class="fdb-box">
-            		<?php echo HTMLGetRandomQuote(); ?>
+	function DashboardFooter() { //Plug-In Area
+		$row=SQLGetUserRowByEmail($_SESSION["u_data_1"]);
+		if($row["type"]==2) {
+		?>
+		<section class="fdb-block" style="background-color: #181818; color: #EEE;">
+			<div class="container">
+				<div class="row">
+					<h2>Plug-Ins:</h2>
 				</div>
-        	</div>
-    	</section>
-	<?php
+				<div class="row">
+					<?php echo "<a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=add_plugin\" class=\"btn btn-empty btn-white btn-round\"><i class=\"fa fa-plug\" aria-hidden=\"true\"></i> Install</a>"; ?>
+					<?php echo "<a href=\"?site=dashboard&siteid=".$_GET["siteid"]."&action=edit_plugins\" class=\"btn btn-round\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> Edit</a>"; ?>
+				</div>
+				<div class="row mt-5">
+					<p><i>The following elements are Plug-In generated!</i></p>
+				</div>
+			</div>
+		</section>
+		<?php
+		$count=SQLGetPluginsRowCount();
+		for($i=0;$i<$count;$i++) {
+			$row=SQLGetPluginsRow(SQLGetPluginsIDs()[$i]);
+			if($row["active"]==1) {
+				include "plug-ins/".$row["name"]."/".$row["name"].".php";
+
+				if(($i+1)%2==1) {
+				?>
+				<section class="fdb-block" style="background-color: #212121; color: #EEE;">
+				<?php
+				} else {
+				?>
+				<section class="fdb-block" style="background-color: #181818; color: #EEE;">
+				<?php
+				}
+				if(function_exists($row["name"])) {
+					call_user_func($row["name"]);
+				} else {
+					echo "<div class=\"container justify-content-center\">";
+					echo "<h2>Plug-In Error: Main-Function(".$row["name"]."()) is missing/or can't be called!</h2>";
+					echo "</div>";
+				}
+				?>
+				</section>
+				<?php
+			}
+		}
+		?>
+		<?php
+		}
 	}
 
 	function DashboardShow() {
@@ -294,6 +334,10 @@
 				} else if($_GET["action"]=="view_users") {
 					if($row["type"]==2) {
 						UserViewer();
+					}
+				} else if($_GET["action"]=="edit_user") {
+					if($row["type"]==2) {
+						UserEdit();
 					}
 				} else if($_GET["action"]=="settings") {
 					if($row["type"]==2) {
@@ -342,6 +386,10 @@
 					if(isset($_GET["page"])) {
 						PageEditCustomPage($_GET["siteid"],$_GET["page"]);
 					}
+				} else if($_GET["action"]=="add_plugin") {
+					PluginsInstall();
+				} else if($_GET["action"]=="edit_plugins") {
+					PluginsEdit();
 				}
 			} else if(isset($_GET["siteid"])&&!isset($_GET["action"])) {
 				DashboardMain($_GET["siteid"]);
