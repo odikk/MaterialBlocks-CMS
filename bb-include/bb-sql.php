@@ -30,7 +30,8 @@
 		7. bb_block
 		8. bb_post
 		9. bb_page
-	    10. install
+		10. install
+		11. bb_plugins
 	*/
 
 	/* 0. sql functions */
@@ -176,6 +177,10 @@
 								   "custom_php varchar(255) DEFAULT NULL,".
 								   "blockids TEXT DEFAULT NULL,".
 								   "PRIMARY KEY(id)");
+		__sqlCreateTable("bb_plugins","id int NOT NULL AUTO_INCREMENT,".
+								   	  "name varchar(255) NOT NULL,".
+								   	  "active int(1) NOT NULL,".
+								   	  "PRIMARY KEY(id)");
 	}
 
 	function SQLCheck() {
@@ -480,5 +485,43 @@
 
 	function SQLUninstallSite($iID) {
 
+	}
+
+	/* 11. bb_plugins */
+	function SQLGetPluginsRow($iID) {
+		return __sqlFetchRow("bb_plugins",$iID);
+	}
+
+	function SQLGetPluginsRowCount() {
+		return __sqlRowCount("bb_plugins");	
+	}
+
+	function SQLGetPluginsIDs() {
+		return __sqlFetchIDs("bb_plugins");
+	}
+
+	function SQLSetPluginsRow($iID,$iActive) {
+		__sqlUpdate("bb_plugins",$iID,"active",$iActive);
+	}
+
+	function SQLSetPluginsRowEx($iID,$sName,$iActive) {
+		__sqlUpdate("bb_plugins",$iID,"name",$sName);
+		__sqlUpdate("bb_plugins",$iID,"active",$iActive);
+	}
+	
+	function SQLAddPluginsRow($sName) {
+		$sFields="name";
+		$sValues="'".$sName."'";
+		__sqlInsert("bb_plugins",$sFields,$sValues);
+	}
+
+	function SQLAddPluginsRowEx($sName,$iActive) {
+		$sFields="name,active";
+		$sValues="'".$sName."', ".$iActive;
+		__sqlInsert("bb_plugins",$sFields,$sValues);
+	}
+
+	function SQLDeletePlugins($iID) {
+		__sqlDelete("bb_plugins",$iID);
 	}
 ?>
