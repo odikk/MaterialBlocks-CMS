@@ -1,11 +1,6 @@
-MaterialBlocks
-=================
+# MaterialBlocks
 
-Froala design-blocks based CMS (PHP5 and up). [Support](mailto: easy-dev@web.de)
-
-![demo](https://i.imgur.com/m6SNlRm.gif)
-
-![demo2](https://i.imgur.com/EbRB0En.gif)
+A Froala design-blocks based CMS with Theming functionality and Blog integration. [Support](mailto: easy-dev@web.de)
 
 ## Getting Started
 
@@ -15,7 +10,7 @@ These instructions will get you a copy of the project up and running on your ser
 
 Before you could start you need to install the following items on your webserver:
 
-```
+```markdown
 * php>=5.*
 * MySQL
 ```
@@ -24,19 +19,21 @@ Before you could start you need to install the following items on your webserver
 
 Follow this simple instructions to install MaterialBlocks on your webserver.
 
-```
+```text
 1. Clone the latest version of MaterialBlocks and extract it.
 2. Copy the containing files and folders into your configured web-path
     * On Linux it should be /var/www/html/ in most cases
 3. Navigate into ./bb-include/ and open bb-config.php and edit it:
 ```
+
 ```php
 define("BB_DB_LOCATION","localhost"); //Enter database location here
 define("BB_DB_NAME","bblock"); //Enter database name here(or leave the same[recommended])
 define("BB_DB_USER","root"); //Enter database user here
 define("BB_DB_PW","1234"); //Enter database password here
 ```
-```
+
+```text
 4. Open your browser and direct to your server-url
 5. The installer should popup. Follow the instructions on screen.
 ```
@@ -45,20 +42,17 @@ define("BB_DB_PW","1234"); //Enter database password here
 
 A more detailed Guide available at [GUIDE.md](GUIDE.md)!
 
-### 1. Add a Page & Edit it!
+### 1. Add a Page & Edit it
 
-1. Login at ?site=dashboard
-![login](https://i.imgur.com/m6SNlRm.gif)
+1.Login at ?site=dashboard
 
-2. Add a Page & Edit it!
-![page](https://i.imgur.com/XyOuNe7.gif)
+2.Add a Page & Edit it!
 
 ### 2. Change the used Theme
 
-1. Install a new Theme or create your own(->see [THEMING](THEMING.md))
+1.Install a new Theme or create your own(->see [THEMING](THEMING.md))
 
-2. Change the used Theme
-![change](https://i.imgur.com/Sb5Ipnu.gif)
+2.Change the used Theme
 
 ## Built With
 
@@ -75,7 +69,7 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/EasyDevCpp/MaterialBlocks-CMS/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/EasyDevCpp/MaterialBlocks-CMS/tags).
 
 ## Authors
 
@@ -91,6 +85,3 @@ This project is licensed under the GNU General Public License - see the [LICENSE
 
 * Frola Design Blocks
 * Inspired by WordPress
-
-## Updates
-* 1.0.0 first release
